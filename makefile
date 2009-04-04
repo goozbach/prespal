@@ -1,9 +1,8 @@
-all: include.html push
 
 push:
-	bzr push
+	# rsync to proper place?
+	# or push RCS
 
-include.html: */indexblurb.txt */indexname.txt
-	./.genout.sh > include.html 
-	bzr ci include.html --unchanged -m "updated include.html via makefile"
+update: */meta.ini 
+	# prg which reads meta; generates include, qrcodes, slides, etc
 
