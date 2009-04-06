@@ -1,6 +1,5 @@
-presentations-viewed
 tmp
-comics
 .bzr
-diagrams
-spits
+lib
+bin
+secret
