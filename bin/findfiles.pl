@@ -2,15 +2,23 @@
 use strict;
 use warnings;
 
-use File::Next;
+use File::Find::Rule;
+use File::Slurp;
 
-#my $descend_filter = sub { $_ ne ".bzr" && $_ ne "lib" && $_ ne "bin" };
+# bring in the stoplist 
+my @stoplist = read_file('.stoplist');
+chomp(@stoplist);
+push(@stoplist,".");
 
-#my $files = File::Next::files({ file_filter => sub { /\.ini$/ } }, '.' );
+# find all the project subdirectories
+my @subdirs = File::Find::Rule->directory()
+                              ->maxdepth(1)
+                              ->not(File::Find::Rule->name(@stoplist))
+                              ->in( '.' );
 
-my $files = File::Next::files( '.' );
 
-while ( defined ( my $file = $files->() ) ) {
-    # do something...
-    print "$file\n";
-}
+#debug code to test file finding
+print join("\n", @subdirs) . "\n";
+print "--------------\n";
+print join(", ", @stoplist) . "\n";
+
