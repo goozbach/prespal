@@ -7,6 +7,9 @@ use File::Slurp;
 use Config::Auto;
 use Data::Dumper;
 
+# create global vars
+my %projhash;
+
 # bring in the stoplist 
 my @stoplist = read_file('.stoplist');
 chomp(@stoplist);
@@ -17,35 +20,36 @@ my @subdirs = File::Find::Rule->directory()
                               ->maxdepth(1)
                               ->not(File::Find::Rule->name(@stoplist))
                               ->in( '.' );
-my $url_base = 'http://blog.friocorte.com/base/';
+
 my $override = Config::Auto::parse('.master.ini');
 
-sub check_exists {
-  my ($top, $var, $config, $dir) = @_;
+sub push_hash {
+  my ($top, $var, $config, $itr) = @_;
   if ($$config{$top}{$var}) {
-    print "proj_$var:\t" . $$config{$top}{$var} . "\n" 
+    $projhash{$itr}{$var} = $$config{$top}{$var}
   } else {
     if ($var eq 'url') {
-      print "proj_$var:\t" . $$override{$top}{$var} . $dir . "\n";
+      my $tmpvar = $$override{$top}{$var} . $itr;
+      $projhash{$itr}{$var} = $tmpvar;
     } else {
-      print "proj_$var:\t" . $$override{$top}{$var} . "\n";
+      $projhash{$itr}{$var} = $$override{$top}{$var};
     }
+    # set the override bit because it didin't come from the per-project meta
+    $projhash{$itr}{'override'}=1;
   }
 }
 
 foreach my $itr (@subdirs) {
-  print "dir_name:\t$itr\n";
   my $config = Config::Auto::parse("$itr/meta.ini") || print "no meta file\n";
 
-  check_exists('main', 'name', $config, $itr);
-  check_exists('main', 'url', $config, $itr);
-  check_exists('main', 'blurb', $config, $itr);
-  print "proj_author:\t" . $$config{'main'}{'author'} . ": <" . $$config{'main'}{'auth_email'} . ">\n";
-  print "--------------\n";
+  push_hash('main', 'name', $config, $itr);
+  push_hash('main', 'url', $config, $itr);
+  push_hash('main', 'blurb', $config, $itr);
+  push_hash('main', 'author', $config, $itr);
+  push_hash('main', 'author_email', $config, $itr);
+  
 }
 
-#debug code to test file finding
-#print join("\n", @subdirs) . "\n";
-
-print join(", ", @stoplist) . "\n";
-
+# debug projhash
+#
+print Dumper(%projhash);
