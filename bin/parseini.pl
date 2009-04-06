@@ -8,6 +8,5 @@ use Data::Dumper;
 
 my $config = Config::Auto::parse("$ARGV[0]");
 
-print $config;
 
 print Dumper(\$config);
