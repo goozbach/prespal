@@ -1,0 +1,110 @@
+--- s5.xslt	2009-04-06 22:16:17.000000000 -0400
++++ mmd2s5.xslt	2009-04-06 23:50:38.000000000 -0400
+@@ -38,13 +38,18 @@
+ 	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+ 	xmlns="http://www.w3.org/1999/xhtml"
+   	exclude-result-prefixes="xhtml xsl"
++  	omit-xml-declaration="yes"
+ 	version="1.0">
+ 
+-	<xsl:output method='xml' encoding='utf-8' indent="yes"/>
++	<xsl:output method='xml' encoding='utf-8' indent="yes"
++		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" 
++		doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"/>
+ 
+ 	<xsl:strip-space elements="*" />
+ 
+-	<xsl:variable name="theme">default</xsl:variable>
++	<!-- change this to reflect the relative path to your S5
++	     installation and theme -->
++	<xsl:variable name="s5_relative_path">ui/default</xsl:variable>
+ 
+ 	<xsl:param name="match"/>
+ 
+@@ -58,14 +63,35 @@
+ 		<head>
+ 		<xsl:apply-templates select="xhtml:meta"/>
+ 		<xsl:apply-templates select="node()"/>
+-		<meta name="version" content="S5 1.1" />
++		<xsl:comment> metadata </xsl:comment>
+ 		<meta name="generator" content="MultiMarkdown"/>
++		<meta name="version" content="S5 1.1" />
++		<meta name="presdate">
++			<!-- if presdate exists, use it.  Otherwise, default to 1 Jan 1970 -->
++			<xsl:attribute name="content">
++				<xsl:variable name="presdate">
++					<xsl:value-of select="/xhtml:html/xhtml:head/xhtml:meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'presdate']/@content"/>
++				</xsl:variable>
++				<xsl:choose>
++					<xsl:when test="boolean($presdate)">
++						<xsl:value-of select="$presdate"/>
++					</xsl:when>
++					<xsl:otherwise>
++						19700101
++					</xsl:otherwise>
++				</xsl:choose>
++			</xsl:attribute>
++		</meta>
++		<xsl:comment> configuration parameters </xsl:comment>
+ 		<meta name="controlVis" content="hidden"/>
+-		<link rel="stylesheet" href="ui/{$theme}/slides.css" type="text/css" media="projection" id="slideProj" />
+-		<link rel="stylesheet" href="ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+-		<link rel="stylesheet" href="ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+-		<link rel="stylesheet" href="ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+-		<script src="ui/default/slides.js" type="text/javascript"></script>
++		<xsl:comment> style sheet links </xsl:comment>
++		<link rel="stylesheet" href="{$s5_relative_path}/slides.css" type="text/css" media="projection" id="slideProj" />
++		<style>@import url(pretty.css);</style>
++		<link rel="stylesheet" href="{$s5_relative_path}/outline.css" type="text/css" media="screen" id="outlineStyle" />
++		<link rel="stylesheet" href="{$s5_relative_path}/print.css" type="text/css" media="print" id="slidePrint" />
++		<link rel="stylesheet" href="{$s5_relative_path}/opera.css" type="text/css" media="projection" id="operaFix" />
++		<xsl:comment> S5 JS </xsl:comment>
++		<script src="{$s5_relative_path}/slides.js" type="text/javascript"></script>
+ 		</head>
+ 	</xsl:template>
+ 
+@@ -75,10 +101,18 @@
+ 
+ 	<xsl:template match="xhtml:body">
+ 		<body>
++
++		<xsl:comment>START header slide</xsl:comment>
++
+ 		<div class="layout">
+-			<div id="controls"><xsl:text>&#x0020;</xsl:text></div>
+-			<div id="currentSlide"><xsl:text>&#x0020;</xsl:text></div>
+-			<div id="header"><xsl:text>&#x0020;</xsl:text></div>
++			<div id="controls"><xsl:comment> DO NOT EDIT </xsl:comment></div>
++			<div id="currentSlide"><xsl:comment> DO NOT EDIT </xsl:comment></div>
++			<div id="header"></div>
++
++			<xsl:comment> blackout and whiteout divs DO NOT EDIT </xsl:comment>
++			<div id="whiteoutbox" class="whiteout"></div>
++			<div id="blackoutbox" class="blackout"></div>
++
+ 			<div id="footer">
+ 			<h1><xsl:value-of select="/xhtml:html/xhtml:head/xhtml:title"/></h1>
+ 			<h2>
+@@ -87,6 +121,7 @@
+ 			</div>
+ 		</div>
+ 		<div class="presentation">
++		<xsl:comment> start header slide </xsl:comment>
+ 		<div class="slide">
+ 		<h1><xsl:value-of select="/xhtml:html/xhtml:head/xhtml:title"/></h1>
+ 		<h2><xsl:value-of select="/xhtml:html/xhtml:head/xhtml:meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'subtitle']/@content"/></h2>
+@@ -100,7 +135,7 @@
+ <xsl:value-of select="/xhtml:html/xhtml:head/xhtml:meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'organization']/@content"/>
+ 		</a></h4>
+ 		<h4>
+-			<xsl:value-of select="/xhtml:html/xhtml:head/xhtml:meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'date']/@content"/>
++			<xsl:value-of select="/xhtml:html/xhtml:head/xhtml:meta[translate(@name,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz') = 'presdate']/@content"/>
+ 		</h4>				
+ 		</div>
+ 		
+@@ -153,5 +188,3 @@
+ 		</ul>
+ 	</xsl:template>
+ </xsl:stylesheet>
+-
+-

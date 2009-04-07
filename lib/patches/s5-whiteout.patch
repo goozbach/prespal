@@ -1,0 +1,91 @@
+=== modified file 's5-blank.html'
+--- s5-blank.html	2009-04-03 16:03:49 +0000
++++ s5-blank.html	2009-04-03 18:21:59 +0000
+@@ -38,6 +38,11 @@
+ <div id="controls"><!-- DO NOT EDIT --></div>
+ <div id="currentSlide"><!-- DO NOT EDIT --></div>
+ <div id="header"></div>
++
++<!-- blackout and whiteout divs DO NOT EDIT -->
++<div id="whiteoutbox" class="whiteout"></div>
++<div id="blackoutbox" class="blackout"></div>
++
+ <div id="footer">
+ <h1>S5 Testbed</h1>
+ <h2>Your computer &#8226; Today's date</h2>
+
+=== modified file 'ui/default/s5-core.css'
+--- ui/default/s5-core.css	2009-04-03 16:03:49 +0000
++++ ui/default/s5-core.css	2009-04-03 18:54:09 +0000
+@@ -7,3 +7,25 @@
+ .layout {display: block;}
+ .slide, .hideme, .incremental {visibility: hidden;}
+ #slide0 {visibility: visible;}
++
++.blackout {
++  display: none;
++  position: absolute;
++  top: 0;
++  left: 0;
++  width: 100%;
++  height: 100%;
++  background-color: black;
++  z-index:1001;
++}
++
++.whiteout {
++  display: none;
++  position: absolute;
++  top: 0;
++  left: 0;
++  width: 100%;
++  height: 100%;
++  background-color: white;
++  z-index:1001;
++}
+
+=== modified file 'ui/default/slides.js'
+--- ui/default/slides.js	2009-04-03 16:03:49 +0000
++++ ui/default/slides.js	2009-04-03 18:52:10 +0000
+@@ -218,6 +218,28 @@
+ 	}
+ }
+ 
++// whiteout blackout function
++function whiteBlack(action) {
++	switch (action) {
++	case 'white':
++	  var obj = document.getElementById('whiteoutbox');
++		if (obj.style.display != 'block') {
++      obj.style.display='block';
++		} else {
++      obj.style.display='none';
++		}
++	break;
++	case 'black':
++	  var obj = document.getElementById('blackoutbox');
++		if (obj.style.display != 'block') {
++      obj.style.display='block';
++		} else {
++      obj.style.display='none';
++		}
++	break;
++	}
++}
++
+ // 'keys' code adapted from MozPoint (http://mozpoint.mozdev.org/)
+ function keys(key) {
+ 	if (!key) {
+@@ -270,6 +292,12 @@
+ 			case 67: // c
+ 				showHide('k');
+ 				break;
++			case 87: // w
++				whiteBlack('white');
++				break;
++			case 66: // w
++				whiteBlack('black');
++				break;
+ 		}
+ 		if (key.which < 48 || key.which > 57) {
+ 			number = undef;
