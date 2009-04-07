@@ -1,0 +1,22 @@
+Title:	OS X Installation Instructions
+CSS:	http://fletcherpenney.net/document.css
+Author:	Fletcher T. Penney
+
+
+# Installation Instructions for Mac OS X #
+
+
+If you are running OS X, I recommend putting your MultiMarkdown folder in your Library Folder, specifically:
+
+>  ~/Library/Application Support/MultiMarkdown
+
+
+This will allow other programs to share one installation of the MultiMarkdown code, and make it easier for you to keep things up to date.
+
+
+In the future, I hope to release some installers to make this process easier, but Apple's Installer tool is woefully unsuited to the task...
+
+
+
+Fletcher T. Penney  
+<http://fletcherpenney.net/MultiMarkdown>

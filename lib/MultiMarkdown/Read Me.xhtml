@@ -1,0 +1,1883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/TR/MathML2/dtd/xhtml-math11-f.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<!-- Processed by MultiMarkdown -->
+		<meta name="Author" content="Fletcher T. Penney"/>
+		<meta name="BaseHeaderLevel" content="2"/>
+		<link type="text/css" rel="stylesheet" href="http://fletcherpenney.net/document.css"/>
+		<meta name="Copyright" content="2005-2008 Fletcher T. Penney.   This work is licensed under a Creative Commons License.   http://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+		<meta name="Format" content="complete"/>
+		<meta name="Keywords" content="Markdown   LaTeX   TeX   PDF   XHTML   XSLT   Oddmuse   OmniOutliner   MultiMarkdown   RTF   TextMate"/>
+		<meta name="Revision" content="$Id: MultiMarkdown User's Guide.md 497 2008-03-23 12:53:40Z fletcher $"/>
+		<meta name="Subtitle" content="Version 2.0.b5"/>
+		<title>MultiMarkdown User’s Guide</title>
+		<meta name="Version" content="2.0.b5"/>
+		<meta name="Web" content="http://fletcherpenney.net/"/>
+		<meta name="XHTMLXSLT" content="xhtml-toc-h2.xslt"/>
+		<meta name="XMP" content="CCAttributionShareAlike"/>
+	</head>
+<body>
+<h2>Table of Contents</h2>
+<ol>
+<li><a id="ToC-introductiontomultimarkdown" href="#introductiontomultimarkdown">Introduction to MultiMarkdown</a>
+<ol>
+<li><a id="ToC-whatismarkdown" href="#whatismarkdown">What is Markdown?</a></li>
+<li><a id="ToC-whatismultimarkdown" href="#whatismultimarkdown">What is MultiMarkdown?</a></li>
+<li><a id="ToC-howdoiusemultimarkdown" href="#howdoiusemultimarkdown">How do I use MultiMarkdown?</a></li>
+<li><a id="ToC-wherecanifindmultimarkdown" href="#wherecanifindmultimarkdown">Where can I find MultiMarkdown?</a></li>
+<li><a id="ToC-wherecanigetmoreinformationaboutmultimarkdown" href="#wherecanigetmoreinformationaboutmultimarkdown">Where can I get more information about MultiMarkdown?</a></li>
+</ol>
+</li>
+<li><a id="ToC-quickstartguidetomultimarkdown" href="#quickstartguidetomultimarkdown">Quickstart Guide to MultiMarkdown</a>
+<ol>
+<li><a id="ToC-generalinstructions" href="#generalinstructions">General Instructions</a></li>
+<li><a id="ToC-commoninstallationinstructionsforosx" href="#commoninstallationinstructionsforosx">“Common Installation” Instructions for OS X</a></li>
+<li><a id="ToC-command-lineshortcuts" href="#command-lineshortcuts">Command-Line Shortcuts</a></li>
+</ol>
+</li>
+<li><a id="ToC-multimarkdownsyntaxguide" href="#multimarkdownsyntaxguide">MultiMarkdown Syntax Guide</a>
+<ol>
+<li><a id="ToC-metadata" href="#metadata">Metadata</a></li>
+<li><a id="ToC-automaticcross-references" href="#automaticcross-references">Automatic Cross-References</a></li>
+<li><a id="ToC-imagesupport" href="#imagesupport">Image Support</a></li>
+<li><a id="ToC-anchorandimageattributes" href="#anchorandimageattributes">Anchor and Image Attributes</a></li>
+<li><a id="ToC-wikilinks" href="#wikilinks">WikiLinks</a></li>
+<li><a id="ToC-footnotes" href="#footnotes">Footnotes</a></li>
+<li><a id="ToC-tables" href="#tables">Tables</a></li>
+<li><a id="ToC-bibliographysupport" href="#bibliographysupport">Bibliography Support</a></li>
+<li><a id="ToC-mathsyntax" href="#mathsyntax">Math Syntax</a></li>
+<li><a id="ToC-definitionlists" href="#definitionlists">Definition Lists</a></li>
+<li><a id="ToC-appendices" href="#appendices">Appendices</a></li>
+<li><a id="ToC-glossaries" href="#glossaries">Glossaries</a></li>
+<li><a id="ToC-poetrymode" href="#poetrymode">Poetry Mode</a></li>
+<li><a id="ToC-miscellanea" href="#miscellanea">Miscellanea</a></li>
+</ol>
+</li>
+<li><a id="ToC-multimarkdownandlatex" href="#multimarkdownandlatex">MultiMarkdown and LaTeX</a>
+<ol>
+</ol>
+</li>
+<li><a id="ToC-advancedfeaturesandcustomization" href="#advancedfeaturesandcustomization">Advanced Features and Customization</a>
+<ol>
+<li><a id="ToC-howdoifindoutaboutfeaturex" href="#howdoifindoutaboutfeaturex">How do I find out about feature x?</a></li>
+<li><a id="ToC-howdoicustomizemultimarkdown" href="#howdoicustomizemultimarkdown">How do I customize MultiMarkdown?</a></li>
+<li><a id="ToC-wheredoidiginthemultimarkdownpackagetofindoutmore" href="#wheredoidiginthemultimarkdownpackagetofindoutmore">Where do I dig in the MultiMarkdown package to find out more?</a></li>
+</ol>
+</li>
+<li><a id="ToC-componentsoftware" href="#componentsoftware">Component Software</a>
+<ol>
+<li><a id="ToC-mmd" href="#mmd">MultiMarkdown</a></li>
+<li><a id="ToC-smartypants" href="#smartypants">SmartyPants</a></li>
+<li><a id="ToC-text::asciimathml" href="#text::asciimathml">Text::ASCIIMathML</a></li>
+<li><a id="ToC-asciimathphpdeprecated" href="#asciimathphpdeprecated">ASCIIMathPHP (Deprecated)</a></li>
+<li><a id="ToC-xsltmathml" href="#xsltmathml">XSLTMathML</a></li>
+</ol>
+</li>
+<li><a id="ToC-applicationsthatsupportmultimarkdown" href="#applicationsthatsupportmultimarkdown">Applications That Support MultiMarkdown</a>
+<ol>
+<li><a id="ToC-multimarkdowndraganddrop" href="#multimarkdowndraganddrop">MultiMarkdown Drag and Drop</a></li>
+<li><a id="ToC-scrivener" href="#scrivener">Scrivener</a></li>
+<li><a id="ToC-textmate" href="#textmate">TextMate</a></li>
+<li><a id="ToC-usingscrivenerandtextmatetogether" href="#usingscrivenerandtextmatetogether">Using Scrivener and TextMate Together</a></li>
+<li><a id="ToC-thecommonmultimarkdownapproach" href="#thecommonmultimarkdownapproach">The “Common” MultiMarkdown approach</a></li>
+<li><a id="ToC-createyourown" href="#createyourown">Create Your Own</a></li>
+</ol>
+</li>
+<li><a id="ToC-technicalissues" href="#technicalissues">Technical Issues</a>
+<ol>
+<li><a id="ToC-xmlnamespaceissues" href="#xmlnamespaceissues">XML Namespace Issues</a></li>
+<li><a id="ToC-xelatextips" href="#xelatextips">XeLaTeX Tips</a></li>
+</ol>
+</li>
+<li><a id="ToC-acknowledgments" href="#acknowledgments">Acknowledgments</a></li>
+<li><a id="ToC-knownissues" href="#knownissues">Known Issues</a></li>
+<li><a id="ToC-thingstodo" href="#thingstodo">Things to Do</a></li>
+<li><a id="ToC-versionhistory" href="#versionhistory">Version History</a></li>
+</ol>
+
+<h2 id="introductiontomultimarkdown">Introduction to MultiMarkdown<a href="#ToC-introductiontomultimarkdown"> ↩</a></h2>
+
+<p>This document is an introduction to <a href="http://fletcherpenney.net/MultiMarkdown">MultiMarkdown</a> — what it is, how to
+use it, how you can help make it better. This document exists in multiple
+formats: a wiki page, a plain text document, a pdf, a <a href="http://www.literatureandlatte.com/scrivener.html" title="Scrivener">Scrivener</a> document,
+etc. Find the format that best suits your needs, or create your own. That is
+what MultiMarkdown was designed to be used for!</p>
+
+<h3 id="whatismarkdown">What is Markdown?<a href="#ToC-whatismarkdown"> ↩</a></h3>
+
+<p>To understand what MultiMarkdown is, you first should be familiar with
+<a href="http://daringfireball.net/projects/markdown/" title="Daring Fireball: Markdown">Markdown</a>. The best description of what Markdown is comes from John Gruber’s
+Markdown web site:</p>
+
+<blockquote>
+  <p>Markdown is a text-to-HTML conversion tool for web writers. Markdown
+  allows you to write using an easy-to-read, easy-to-write plain text
+  format, then convert it to structurally valid XHTML (or HTML).</p>
+  
+  <p>Thus, “Markdown” is two things: (1) a plain text formatting
+  syntax; and (2) a software tool, written in Perl, that converts
+  the plain text formatting to HTML. See the Syntax page for details
+  pertaining to Markdown’s formatting syntax. You can try it out,
+  right now, using the online Dingus.</p>
+  
+  <p>The overriding design goal for Markdown’s formatting syntax is to
+  make it as readable as possible. The idea is that a Markdown-formatted
+  document should be publishable as-is, as plain text, without looking
+  like it’s been marked up with tags or formatting instructions. While
+  Markdown’s syntax has been influenced by several existing
+  text-to-HTML filters, the single biggest source of inspiration for
+  Markdown’s syntax is the format of plain text email. <span class="markdowncitation"> (<a href="#Gruber">1</a>)</span></p>
+</blockquote>
+
+<h3 id="whatismultimarkdown">What is MultiMarkdown?<a href="#ToC-whatismultimarkdown"> ↩</a></h3>
+
+<p>Markdown is great, but it lacked a few features that would allow it to work
+with documents, rather than just pieces of a web page.</p>
+
+<p>I wrote MultiMarkdown in order to leverage Markdown’s syntax, but to extend it
+to work with complete documents that could ultimately be converted from text
+into other formats, including complete XHTML documents, LaTeX, PDF, RTF, or
+even (shudder) Microsoft Word documents.</p>
+
+<p>In addition to the ability to work with complete documents and conversion to
+other formats, the Markdown syntax was lacking a few things. Michel Fortin
+added a few additional syntax tools when writing <a href="http://www.michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a>. Some
+of his ideas were implemented and expanded on in MultiMarkdown.</p>
+
+<p>John Gruber may disagree with me, but I really did try to stick with his
+proclaimed vision whenever I added a new syntax format to MultiMarkdown. The
+quality that attracted me to Markdown the most was its clean format. Reading a
+plain text document written in Markdown is <em>easy</em>. It makes sense, and it
+looks like it was designed for people, not computers. To the extent possible,
+I tried to keep this same concept in mind when working on MultiMarkdown.</p>
+
+<p>I may or may not have succeeded in this…</p>
+
+<p>In the vein of Markdown’s multiple definitions, you can think of MultiMarkdown
+as:</p>
+
+<ol>
+<li><p>A perl script to convert plain text to XHTML</p></li>
+<li><p>The syntax used in the plain text to describe how to convert it to XHTML</p></li>
+<li><p>The system of programs (perl scripts, shell commands, XSLT transforms, php scripts, etc) used to convert plain text to XHTML, and then to convert XHTML into LaTeX, PDF, RTF, etc)</p></li>
+</ol>
+
+<h3 id="howdoiusemultimarkdown">How do I use MultiMarkdown?<a href="#ToC-howdoiusemultimarkdown"> ↩</a></h3>
+
+<p>You can use MultiMarkdown in a variety of ways:</p>
+
+<ul>
+<li><p>As a command-line perl program (the “default” approach)</p></li>
+<li><p>As a drag and drop application for Mac OS X</p></li>
+<li><p>As a <a href="http://macromates.com/" title="TextMate">TextMate</a>
+<a href="http://files.fletcherpenney.net/MultiMarkdown.tmbundle.zip">bundle</a></p></li>
+<li><p>Within the <a href="http://www.literatureandlatte.com/scrivener.html" title="Scrivener">Scrivener</a> application</p></li>
+<li><p>In a <a href="http://www.blosxom.com/" title="Blosxom">blosxom</a> or <a href="http://oddmuse.org/" title="Oddmuse">Oddmuse</a> web site</p></li>
+</ul>
+
+<h3 id="wherecanifindmultimarkdown">Where can I find MultiMarkdown?<a href="#ToC-wherecanifindmultimarkdown"> ↩</a></h3>
+
+<p>The MultiMarkdown package can be downloaded:</p>
+
+<ul>
+<li><a href="http://files.fletcherpenney.net/MultiMarkdown.zip">http://files.fletcherpenney.net/MultiMarkdown.zip</a></li>
+</ul>
+
+<p>Information about MultiMarkdown is available on my web site:</p>
+
+<ul>
+<li><a href="http://fletcherpenney.net/MultiMarkdown">http://fletcherpenney.net/MultiMarkdown</a></li>
+</ul>
+
+<p>John Gruber’s original Markdown is available at his site:</p>
+
+<ul>
+<li><a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></li>
+</ul>
+
+<p>Michel Fortin’s PHP version of Markdown is at his site:</p>
+
+<ul>
+<li><a href="http://www.michelf.com/projects/php-markdown/">http://www.michelf.com/projects/php-markdown/</a></li>
+</ul>
+
+<h3 id="wherecanigetmoreinformationaboutmultimarkdown">Where can I get more information about MultiMarkdown?<a href="#ToC-wherecanigetmoreinformationaboutmultimarkdown"> ↩</a></h3>
+
+<p>As above, check my web site.</p>
+
+<p>Also, you can check out the MultiMarkdown discussion list:</p>
+
+<ul>
+<li><a href="http://groups.google.com/group/multimarkdown/">http://groups.google.com/group/multimarkdown/</a></li>
+<li><a href="mailto:multimarkdown@googlegroups.com">multimarkdown@googlegroups.com</a></li>
+</ul>
+
+<p>If you questions are specific to Scrivener, you can also browse the Literate and Latte forum:</p>
+
+<ul>
+<li><a href="http://www.literatureandlatte.com/forum/">http://www.literatureandlatte.com/forum/</a></li>
+</ul>
+
+<h2 id="quickstartguidetomultimarkdown">Quickstart Guide to MultiMarkdown<a href="#ToC-quickstartguidetomultimarkdown"> ↩</a></h2>
+
+<p>Quick start instructions, for those in a hurry…</p>
+
+<h3 id="generalinstructions">General Instructions<a href="#ToC-generalinstructions"> ↩</a></h3>
+
+<ol>
+<li><p>Download the MultiMarkdown package:</p>
+
+<p><a href="http://files.fletcherpenney.net/MultiMarkdown.zip">http://files.fletcherpenney.net/MultiMarkdown.zip</a></p></li>
+<li><p>Unzip it</p></li>
+<li><p>In the “bin” directory, there are a couple of perl scripts designed to take a MultiMarkdown text file and convert to XHTML, RTF, or LaTeX:</p>
+
+<ul><li><p>multimarkdown2XHTML.pl</p></li>
+<li><p>multimarkdown2latex.pl</p></li>
+<li><p>multimarkdown2RTF.pl</p></li></ul></li>
+<li><p>To use these files, do something like the following:</p>
+
+<pre><code>cd MultiMarkdown
+bin/multimarkdown2XHTML.pl file.txt &gt; file.html</code></pre>
+
+<p>where “file.txt” is the MultiMarkdown file you wish to process.</p></li>
+<li><p>You can now open <code>file.html</code> in your web browser, or do what you like with it.</p></li>
+</ol>
+
+<h3 id="commoninstallationinstructionsforosx">“Common Installation” Instructions for OS X<a href="#ToC-commoninstallationinstructionsforosx"> ↩</a></h3>
+
+<ol>
+<li><p>Download the MultiMarkdown package:</p>
+
+<p><a href="http://files.fletcherpenney.net/MultiMarkdown.zip">http://files.fletcherpenney.net/MultiMarkdown.zip</a></p></li>
+<li><p>Unzip the file</p></li>
+<li><p>Move the unzipped directory to the appropriate place:</p>
+
+<ul><li><code>/Library/Application Support/MultiMarkdown</code></li>
+<li><code>~/Library/Application Support/MultiMarkdown</code></li></ul></li>
+<li><p>Use your application as usual (e.g. <a href="http://macromates.com/" title="TextMate">TextMate</a>, <a href="http://www.literatureandlatte.com/scrivener.html" title="Scrivener">Scrivener</a>, the MultiMarkdown <a href="http://fletcherpenney.net/MultiMarkdown_Drag_and_Drop">Drag and Drop</a> utilities)</p></li>
+</ol>
+
+<h3 id="command-lineshortcuts">Command-Line Shortcuts<a href="#ToC-command-lineshortcuts"> ↩</a></h3>
+
+<ul>
+<li><p>The perl scripts above look for certain utility files in certain places. It
+is important to preserve the directory structure of the various files
+included in the MultiMarkdown package.</p></li>
+<li><p>Because of this, symlinks don’t seem to work well. Aliases do, however. For
+example, in tcsh, you can add the following to your .tcshrc file (similar
+features should exist for other shells)</p>
+
+<pre><code>alias mmd '/Path/To/MultiMarkdown/bin/multimarkdown2XHTML.pl'
+alias mmd2tex '/Path/To/MultiMarkdown/bin/multimarkdown2latex.pl'</code></pre>
+
+<p>Then, you could do something like this:</p>
+
+<pre><code>mmd file.txt &gt; file.html</code></pre></li>
+</ul>
+
+<h2 id="multimarkdownsyntaxguide">MultiMarkdown Syntax Guide<a href="#ToC-multimarkdownsyntaxguide"> ↩</a></h2>
+
+<p>This is a guide to the markup syntax used in the MultiMarkdown system.</p>
+
+<h3 id="metadata">Metadata<a href="#ToC-metadata"> ↩</a></h3>
+
+<p>MultiMarkdown has support for metadata, meaning that you can include
+information about a document that is not necessarily part of the document
+contents.</p>
+
+<p>To use metadata, simply add information to the top of a Markdown file:</p>
+
+<pre><code>Title:  A New MultiMarkdown Document  
+Author: Fletcher T. Penney  
+        John Doe  
+Date:   July 25, 2005  </code></pre>
+
+<p>The key is the text before the colon, and the data is the text after the
+colon. In the above example, notice that there are two lines of information
+for the Author key. If you end a line with “space-space-newline”, the newline
+will be included when converted to other formats.</p>
+
+<p>There must not be any whitespace above the metadata, and the metadata block
+ends with the first whitespace only line. The metadata is stripped from the
+document before it is passed on to the syntax parser.</p>
+
+<p>While not required, I recommend including two spaces at the end of each line
+of metadata. In this way, if you pass your document through a regular version
+of Markdown, the metadata will be properly formatted as plain text with line
+breaks, rather than joined into a single run-on paragraph.</p>
+
+<p>I have included information about some of the “standard” metadata keys — I
+welcome feedback and suggestions for additional standard keys that would be
+useful. If you add keys that are not listed, they are included in the XHTML
+and LaTeX as custom variables that can still be used if you desire.</p>
+
+<p>Remember, XHTML snippets have no means to use metadata. To make use of these
+features, one must be using <code>Format: complete</code> to create full XHTML documents,
+which can then be processed using XSLT to create other document types. As an
+example, I use metadata for information that is used to add title, author,
+keyword, and copyright metadata to PDF’s created by MultiMarkdown.</p>
+
+<p><strong>Note</strong>: I make multiple mentions to the use of these keys for LaTeX
+documents. This is simply because the LaTeX output format currently makes the
+most use of the metadata information. Any export format could be modified to
+make use of additional metadata keys.</p>
+
+<h4 id="address">Address</h4>
+
+<p>Use this to include the author’s mailing address. You can have more than one
+line in this field — use two extra spaces at the end of a line, and a
+newline character will be used in LaTeX. Also used as return address for
+letterhead and envelope templates.</p>
+
+<h4 id="author">Author</h4>
+
+<p>Self-explanatory. I strip this out to provide an author string to LaTeX
+documents.  Also used as the sender for letterhead and envelope templates.</p>
+
+<h4 id="affiliation">Affiliation</h4>
+
+<p>Use this to include an organization that the author is affiliated with, e.g. a
+university, company, or organization. You can include address information here
+as well, or use the <code>Address</code>, <code>email</code>, <code>web</code>, and <code>phone</code> metadata fields.
+You can have more than one line in this field — use two extra spaces at the
+end of the line, and a newline character will be used in LaTeX.</p>
+
+<h4 id="baseheaderlevel">Base Header Level</h4>
+
+<p>Used by my XSLT script tool to change the default header level. For example,
+if using the memoir class, you might want a first level header to be
+interpreted as a chapter, rather than as a part. To do this, simply set <code>Base
+Header Level</code> to <code>2</code>.</p>
+
+<h4 id="baseurl">Base URL</h4>
+
+<p>Set to the base part of a url to be used for <code>WikiLinks</code> and <code>[[Free Links]]</code>.
+See <a href="#wikilinks" title="WikiLinks">WikiLinks</a> for more information.</p>
+
+<h4 id="bibliographytitle">Bibliography Title</h4>
+
+<p>Change the title used for the references section (e.g. “References” or
+“Bibliography”). The default value is “Bibliography”.</p>
+
+<h4 id="bibliographystyle">Bibliography Style</h4>
+
+<p>The name of the BibTeX style you wish to use.</p>
+
+<h4 id="bibtex">BibTeX</h4>
+
+<p>This should be the name of a <code>.bib</code> file (a BibTeX file used to store
+references). If you use my xhtml2latex.xslt file, this will convert external
+citations into markup for BibTeX (see <a href="#bibliographysupport" title="Bibliography Support">Bibliography Support</a> for more
+information).</p>
+
+<p>You must have <code>bibtex</code> installed and working, and the <code>.bib</code> file must be in
+your working directory.</p>
+
+<h4 id="chapterstyle">Chapterstyle</h4>
+
+<p>This is used to designate the <code>chapterstyle</code> in LaTeX memoir documents.</p>
+
+<h4 id="copyright">Copyright</h4>
+
+<p>This can be used to provide a copyright string.</p>
+
+<h4 id="css">CSS</h4>
+
+<p>Used to specify a CSS stylesheet when creating the complete XHTML output.</p>
+
+<h4 id="date">Date</h4>
+
+<p>Provide a date for the document.</p>
+
+<h4 id="email">Email</h4>
+
+<p>Use this to include the author’s email address.</p>
+
+<h4 id="format">Format</h4>
+
+<p>Set to <code>complete</code> to indicate that a fully-formed XHTML document should be
+produced. Such a document is ready for processing by an XSLT tool, such as the
+XSLT files to convert XHTML into LaTeX.</p>
+
+<p><strong>Note</strong>: Some MultiMarkdown tools add this for you (e.g. TextMate using my
+bundle, and Scrivener.) Duplicating the <code>Format</code> key in these programs will
+not cause a problem.</p>
+
+<h4 id="keywords">Keywords</h4>
+
+<p>Provide a list of keywords for the document. I use these to add keywords to
+PDF’s that are produced as well. Keywords can be separated by commas, or
+placed on separate lines.</p>
+
+<h4 id="language">Language</h4>
+
+<p>Currently, the language field is used to specify which version of
+<a href="http://daringfireball.net/projects/smartypants/" title="SmartyPants">SmartyPants</a> to use. In the future, it may be used for other purposes as
+well.</p>
+
+<p>The languages are written using the English word (e.g. “german” not
+“deutsch”).</p>
+
+<h4 id="latexxslt">LaTeX XSLT</h4>
+
+<p>Used to designate an XSLT file to convert an XHTML document to a LaTeX
+document. The LaTeX document can then be converted to PDF by <code>pdflatex</code>. This
+key used to be called <code>XSLT File</code>.</p>
+
+<h4 id="pagestyle">Pagestyle</h4>
+
+<p>This is used to designate the <code>pagestyle</code> in LaTeX memoir documents.</p>
+
+<h4 id="phone">Phone</h4>
+
+<p>Use this to include the author’s phone number(s). You can have more than one
+line in this field — use two extra spaces at the end of the line, and a
+newline character will be used in LaTeX.</p>
+
+<h4 id="recipient">Recipient</h4>
+
+<p>Used by letterhead and envelope templates.</p>
+
+<h4 id="recipientaddress">Recipient Address</h4>
+
+<p>Used by letterhead and envelope templates.</p>
+
+<h4 id="revision">Revision</h4>
+
+<p>You can use a string to declare the current version of the document. Displayed
+on the copyright page when using my memoir XSLT transform.</p>
+
+<h4 id="rtfxslt">RTF XSLT</h4>
+
+<p>This key is used to provide an XSLT file that can alter the XHTML output prior
+to conversion to RTF. Useful for further customizing the output of
+MultiMarkdown specifically for the RTF format. I have no plans to create any
+such files myself, but others may find it useful.</p>
+
+<h4 id="subtitle">Subtitle</h4>
+
+<p>Used to provide a subtitle. It ends up in the meta tags, but can be extracted
+by XSLT for other uses.</p>
+
+<h4 id="title">Title</h4>
+
+<p>Used to provide the official title of a document. This is set as the <code>&lt;title&gt;</code>
+string within the <code>&lt;head&gt;</code> section of an HTML document, and is also used by
+other export formats.</p>
+
+<h4 id="usewikilinks">Use WikiLinks</h4>
+
+<p>Set to <code>true</code> or <code>1</code> to enable the use of <code>WikiWords</code> and <code>[[Free Links]]</code>.
+Requires that you also set <code>Base URL</code>. See <a href="#wikilinks" title="WikiLinks">WikiLinks</a> for more information.</p>
+
+<h4 id="web">Web</h4>
+
+<p>Use this to include the author’s web URL.</p>
+
+<h4 id="xhtmlheader">XHTML Header</h4>
+
+<p>This is used to include raw XHTML information in the header of a document. You
+can use this field to add information that will be included in the header of
+the generated XHTML file. This can be CSS formatting data, or javascript code,
+or just about anything. I am not responsible for getting that code to work.
+MultiMarkdown just includes it as is.</p>
+
+<p>Anything included in this field is inserted, unaltered, in the <code>&lt;head&gt;</code>
+section of the XHTML output. If you do add anything here, the XSLT stylesheet
+may have to updated to ignore what you added if you want to convert to LaTeX.
+Let me know what you add, and I can consider updating the XSLT stylesheet to
+ignore it. Currently it ignores <code>&lt;style&gt;</code> sections.</p>
+
+<h4 id="xhtmlxslt">XHTML XSLT</h4>
+
+<p>This is the name of the XSLT file to use to post-process the XHTML file. This
+can be used to further customize the XHTML output generated by MultiMarkdown.
+For example, the <code>xhtml-toc.xslt</code> file can add a Table of Contents to the
+start of XHTML page.</p>
+
+<h4 id="xmp">XMP</h4>
+
+<p>This is used to provide a file to be included using
+<a href="http://www.ctan.org/tex-archive/macros/latex/contrib/xmpincl/">xmpincl</a>.
+Basically, this adds the ability to provide Creative Commons Licensing
+information in a PDF’s <a href="http://creativecommons.org/technology/xmp">metadata</a>.
+It can also be used for other purposes (beyond the scope of this document.)</p>
+
+<h4 id="xsltfiledeprecated">XSLT File (deprecated)</h4>
+
+<p>This metadata key has been deprecated in favor of <code>XHTML XSLT</code>, <code>RTF XSLT</code>,
+and <code>LaTeX XSLT</code>.</p>
+
+<h3 id="automaticcross-references">Automatic Cross-References<a href="#ToC-automaticcross-references"> ↩</a></h3>
+
+<p>An oft-requested feature was the ability to have Markdown automatically handle
+within-document links as easily as it handled external links. To this aim, I
+added the ability to interpret <code>[Some Text][]</code> as a cross-link, if a header
+named “Some Text” exists.</p>
+
+<p>As an example, <code>[Introduction to MultiMarkdown][]</code> will take you to <a href="#introductiontomultimarkdown" title="Introduction to MultiMarkdown">the
+Introduction</a>.</p>
+
+<p>Alternatively, you can include an optional label of your choosing to help
+disambiguate cases where multiple headers have the same title:</p>
+
+<pre><code>### Overview [MultiMarkdownOverview] ##</code></pre>
+
+<p>This allows you to use <code>[MultiMarkdownOverview]</code> to refer to this section
+specifically, and not another section named <code>Overview</code>. This works with atx-
+or settext-style headers.</p>
+
+<p>If you have already defined an anchor using the same id that is used by a
+header, then the defined anchor takes precedence.</p>
+
+<p>In addition to headers within the document, you can provide labels for images
+and tables which can then be used for cross-references as well.</p>
+
+<h3 id="imagesupport">Image Support<a href="#ToC-imagesupport"> ↩</a></h3>
+
+<p>Obviously, images are handled just fine by Markdown (with the exception of
+attributes as noted above.) However, without some more information, images are
+not easily translated into other document formats (e.g. PDF).</p>
+
+<p>To handle this, my XSLT files will make use of <code>&lt;img&gt;</code> dimensions (e.g.
+<code>height</code> and <code>width</code>). If present, the image will be scaled. If only one
+dimension is specified, the image will be scaled proportionately. If neither
+<code>height</code> nor <code>width</code> is specified, then the image will be scaled such that
+it’s width is the same as a column of text. This is to prevent high resolution
+images from overflowing the page. Unfortunately, it has the side effect of
+“zooming” in on smaller images. So, if you have images that are being scaled
+in a way that you do not desire, simply specify at least one dimension.</p>
+
+<p><em>Note: XHTML only allows for units of <code>px</code> and <code>%</code> on <code>&lt;img&gt;</code> tags. LaTeX
+allows for several others. So, my XSLT file allows for other units to be used,
+even if they screw up the XHTML version. You have to choose appropriate units
+for your purpose. Unfortunately, the only way around this is to make sure that
+all of your images contain actual dimension information, and then remove the
+<code>\resizebox</code> part from the XSLT.</em></p>
+
+<h3 id="anchorandimageattributes">Anchor and Image Attributes<a href="#ToC-anchorandimageattributes"> ↩</a></h3>
+
+<p>Adding attributes to links and images has been requested for a long time on
+the Markdown discussion list. I was fairly opposed to this, as most of the
+proposals really disrupted the readability of the syntax. I consider myself a
+“Markdown purist”, meaning that I took John’s introduction to heart:</p>
+
+<blockquote>
+  <p>The overriding design goal for Markdown’s formatting syntax is to make
+  it as readable as possible. The idea is that a Markdown-formatted
+  document should be publishable as-is, as plain text, without looking
+  like it’s been marked up with tags or formatting instructions. While
+  Markdown’s syntax has been influenced by several existing text-to-HTML
+  filters, the single biggest source of inspiration for Markdown’s
+  syntax is the format of plain text email.</p>
+</blockquote>
+
+<p>Because there was not a syntax proposal that I felt fit this goal, I was generally opposed to the idea.</p>
+
+<p>Then, Choan C. Gálvez <a href="http://six.pairlist.net/pipermail/markdown-discuss/2005-October/001578.html">proposed</a> a brilliantly simple syntax that
+stayed out of the way. By simply appending the attributes to the link
+reference information, which is already removed from the text itself, it
+doesn’t disturb the readability.</p>
+
+<p>For example:</p>
+
+<pre><code>This is a formatted ![image][] and a [link][] with attributes.
+
+[image]: http://path.to/image "Image title" width=40px height=400px
+[link]:  http://path.to/link.html "Some Link" class=external
+         style="border: solid black 1px;"</code></pre>
+
+<p>This will generate width and height attributes for the image, and a border
+around the link. And while it can be argued that it does look “like it’s been
+marked up with tags [and] formatting instructions”, even I can’t argue too
+strongly against it. The link and the title in quotes already look like some
+form of markup, and the the additional tags are hardly that intrusive, and
+they offer a great deal of functionality. They might even be useful in further
+functions (citations?).</p>
+
+<p>The attributes must continue after the other link/image data, and may contain
+newlines, but must start at the beginning of the line. The format is
+<code>attribute=value</code> or <code>attribute="multi word value"</code>. Currently, MultiMarkdown
+does not attempt to interpret or make any use of any of these attributes.
+Also, you can’t have a multiword attribute span a newline.</p>
+
+<h3 id="wikilinks">WikiLinks<a href="#ToC-wikilinks"> ↩</a></h3>
+
+<p>MultiMarkdown includes support for “WikiLinks” for those who are using
+MultiMarkdown in a wiki environment, such as <a href="http://oddmuse.org/" title="Oddmuse">Oddmuse</a>. If <code>Use WikiLinks</code>
+is set to true in the metadata, then WikiWords, such as <code>ThisIsAWikiWord</code> will
+be used to create a link to the given page, using the <code>Base URL</code> metadata key
+to construct the URL. Additionally, you can use what Oddmuse refers to as
+“Free Links” — rather than using “CamelCase” to define a link, you use
+brackets to designate a link with multiple words, e.g. <code>[[This Is A Free
+Link]]</code>.</p>
+
+<p>This feature is not really useful outside of a wiki environment.</p>
+
+<p>If you are using this, and want a word that happens to look like a WikiWord to
+be ignored, simply prepend a backslash, e.g. <code>\ThisIsNotAWikiWord</code>.</p>
+
+<p><strong>Note:</strong> The WikiLinks feature has come to cause more trouble than it is
+worth. It will likely be deprecated, but one can still use the wiki software
+to manage these links. For example, my <a href="http://www.oddmuse.org/cgi-bin/wiki/Markdown_Extension">MultiMarkdown Extension</a> for <a href="http://oddmuse.org/" title="Oddmuse">Oddmuse</a>
+supports Oddmuse styled WikiLinks.</p>
+
+<h3 id="footnotes">Footnotes<a href="#ToC-footnotes"> ↩</a></h3>
+
+<p>I have added support for footnotes to MultiMarkdown, using the syntax proposed
+by John Gruber. Note that there is no official support for footnotes yet, so
+the output format may change, but the input format sounds fairly stable.</p>
+
+<p>To create a footnote, enter something like the following:</p>
+
+<pre><code>Here is some text containing a footnote.[^somesamplefootnote]
+
+[^somesamplefootnote]: Here is the text of the footnote itself.
+
+[somelink]:http://somelink.com</code></pre>
+
+<p>The footnote itself must be at the start of a line, just like links by
+reference. If you want a footnote to have multiple paragraphs, lists, etc.,
+then the subsequent paragraphs need an extra tab preceding them. You may have
+to experiment to get this just right, and please let me know of any issues you
+find.</p>
+
+<p>This is what the final result looks like:</p>
+
+<blockquote>
+  <p>Here is some text containing a footnote.<a href="#fn:somesamplefootnote" id="fnref:somesamplefootnote" class="footnote">1</a></p>
+</blockquote>
+
+<h3 id="tables">Tables<a href="#ToC-tables"> ↩</a></h3>
+
+<p>I have implemented a syntax for tables similar to that used by Michael
+Fortin’s <a href="http://www.michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a>.</p>
+
+<p>Basically, it allows you to turn:</p>
+
+<pre><code>|             |          Grouping           ||
+First Header  | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Content       |          *Long Cell*        ||
+Content       |   **Cell**    |         Cell |
+
+New section   |     More      |         Data |
+And more      |            And more          |
+[Prototype table]</code></pre>
+
+<p>into a <a href="#prototypetable" title="Prototype table">table</a>.</p>
+
+<table>
+<caption id="prototypetable">Prototype table</caption>
+<col/>
+<col align="center"/>
+<col align="right"/>
+<thead>
+<tr>
+	<th> </th>
+	<th colspan="2">Grouping</th>
+</tr>
+<tr>
+	<th>First Header</th>
+	<th>Second Header</th>
+	<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Content</td>
+	<td colspan="2" align="center"><em>Long Cell</em></td>
+</tr>
+<tr>
+	<td>Content</td>
+	<td align="center"><strong>Cell</strong></td>
+	<td align="right">Cell</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>New section</td>
+	<td align="center">More</td>
+	<td align="right">Data</td>
+</tr>
+<tr>
+	<td>And more</td>
+	<td colspan="2" align="center">And more</td>
+</tr>
+</tbody>
+</table>
+
+<p>The requirements are:</p>
+
+<ul>
+<li>There must be at least one <code>|</code> per line</li>
+<li>The second line must contain only <code>|</code>,<code>-</code>,<code>:</code>,<code>.</code>, or spaces</li>
+<li>Cell content must be on one line only</li>
+<li>Columns are separated by <code>|</code></li>
+<li>The first line of the table, and the alignment/divider line, must start at 
+the beginning of the line</li>
+</ul>
+
+<p>Other notes:</p>
+
+<ul>
+<li><p>It is optional whether you have <code>|</code>’s at the beginning and end of lines.</p></li>
+<li><p>To set alignment, you can use a colon to designate left or right alignment,
+or a colon at each end to designate center alignment, as above. If no colon
+is present, the default alignment of your system is selected (left in most
+cases). If you use a period character (<code>.</code>), then <code>char</code> alignment is used -
+in the future this will allow columns of decimal formatted numbers to be
+aligned on the decimal character. Browsers do not currently support this
+feature, so it is somewhat useless at the moment. It could be used in an
+XSLT stylesheet for other output formats (e.g. LaTeX).</p></li>
+<li><p>To indicate that a cell should span multiple columns, there simply add
+additional pipes (<code>|</code>) at the end of the cell, as shown in the example. If
+the cell in question is at the end of the row, then of course that means
+that pipes are not optional at the end of that row….</p></li>
+<li><p>You can use normal Markdown markup within the table cells.</p></li>
+<li><p>Captions are optional, but if present must be at the beginning of the line
+immediately preceding or following the table, start with <code>[</code>, and end with
+<code>]</code>. If you have a caption before and after the table, only the first match
+will be used.</p></li>
+<li><p>If you have a caption, you can also have a label, allowing you to create
+anchors pointing to the table. If there is no label, then the caption acts
+as the label</p></li>
+<li><p>Cells can be empty.</p></li>
+<li><p>You can create multiple <code>&lt;tbody&gt;</code> tags within a table by having a <strong>single</strong>
+empty line between rows of the table. This allows your CSS to place
+horizontal borders to emphasize different sections of the table.</p></li>
+<li><p>If there is no header for the first column, then cells in that column will
+be treated as headers, and formatted as such.</p></li>
+</ul>
+
+<h3 id="bibliographysupport">Bibliography Support<a href="#ToC-bibliographysupport"> ↩</a></h3>
+
+<p>I have included support for <em>basic</em> bibliography features in this version of
+MultiMarkdown. Please give me feedback on ways to improve this but keep the
+following in mind:</p>
+
+<ol>
+<li><p>Bibliography support in MultiMarkdown is rudimentary. The goal is to offer
+a basic standalone feature, that can be changed using the tool of your choice
+to a more robust format (e.g. BibTeX, CiteProc). My XSLT files demonstrate how
+to make this format compatible with BibTeX, but I am not planning on
+personally providing compatibility with other tools. Feel free to post your
+ideas and tools to the wiki.</p></li>
+<li><p>Those needing more detailed function sets for their bibliographies may need
+customized tools to provide those services. This is a basic tool that should
+work for most people. Reference librarians will probably not be satisfied
+however.</p></li>
+</ol>
+
+<p>To use citations in MultiMarkdown, you use a syntax much like that for
+anchors:</p>
+
+<pre><code>This is a statement that should be attributed to
+its source[p. 23][#Doe:2006].
+
+And following is the description of the reference to be
+used in the bibliography.
+
+[#Doe:2006]: John Doe. *Some Big Fancy Book*.  Vanity Press, 2006.</code></pre>
+
+<p>The XHTML that is generated is as follows:</p>
+
+<pre><code>&lt;p&gt;This is a statement that should be attributed to its source
+&lt;span class="markdowncitation"&gt; (&lt;a href="#Doe:2006"&gt;1&lt;/a&gt;, &lt;span 
+class="locator"&gt;p. 23&lt;/span&gt;)&lt;/span&gt;.&lt;/p&gt;
+
+&lt;p&gt;And following is the description of the reference to be used
+in the bibliography.&lt;/p&gt;
+
+&lt;div class="bibliography"&gt;
+&lt;hr /&gt;
+&lt;p&gt;Bibliography&lt;/p&gt;
+
+&lt;div id="Doe:2006"&gt;&lt;p&gt;[1] John Doe. &lt;em&gt;Some Big Fancy Book&lt;/em&gt;.
+Vanity Press, 2006.&lt;/p&gt;&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+<p>You are not required to use a locator (e.g. <code>p. 23</code>), and there are no special
+rules on what can be used as a locator if you choose to use one.</p>
+
+<p>There are no rules on the citation key format that you use (e.g. <code>Doe:2006</code>),
+but it must be preceded by a <code>#</code>, just like footnotes use <code>^</code>.</p>
+
+<p>As for the reference description, you can use Markup code within this section,
+and I recommend leaving a blank line afterwards to prevent concatenation of
+several references. Note that there is no way to reformat these references in
+different bibliography styles; for this you need a program designed for that
+purpose (e.g. BibTeX).</p>
+
+<p>If you want to include a source in your bibliography that was not cited, you
+may use the following:</p>
+
+<pre><code>[Not cited][#citekey]</code></pre>
+
+<p>The <code>Not cited</code> bit is not case sensitive.</p>
+
+<h4 id="multimarkdownreferences">MultiMarkdown References</h4>
+
+<p>If you define your references (as in the example above), MultiMarkdown will
+automatically append a basic bibliography to the end of your document. The
+citations will of the form:</p>
+
+<pre><code>&lt;span class="markdowncitation"&gt; (&lt;a href="#citekey"&gt;#
+&lt;/a&gt;, &lt;span class="locator"&gt;p. 23&lt;/span&gt;)&lt;/span&gt;</code></pre>
+
+<p>If you don’t define a locator, you will get:</p>
+
+<pre><code>&lt;span class="markdowncitation"&gt; (&lt;a href="#citekey"&gt;#
+&lt;/a&gt;)&lt;/span&gt;</code></pre>
+
+<p>When you click on the <code>#</code> (which is replaced with the specific reference
+number), it takes you to the appropriate point in the Bibliography. Unlike
+footnotes, there is no reverse link.</p>
+
+<h4 id="externalreferences">External References</h4>
+
+<p>If you do not define references, then MultiMarkdown will substitute different
+markup that can be used by XSLT to transform it into markup for an external
+tool, e.g. BibTeX.</p>
+
+<pre><code>&lt;span class="externalcitation"&gt; (&lt;a id="citekey"&gt;citekey&lt;/a&gt;, &lt;span 
+class="locator"&gt;p. 23&lt;/span&gt;)&lt;/span&gt;</code></pre>
+
+<p>If you don’t define a locator, you will get:</p>
+
+<pre><code>&lt;span class="externalcitation"&gt; (&lt;a id="citekey"&gt;citekey&lt;/a&gt;)&lt;/span&gt;</code></pre>
+
+<p>Obviously, the citekey that you use in MultiMarkdown must match that used by
+your external tool.</p>
+
+<h4 id="multiplecitations">Multiple Citations</h4>
+
+<p>When you need to combine multiple citations together, simply add them
+serially:</p>
+
+<pre><code>[p. 3][#Doe:1996][p. 10][#Smith:2005]</code></pre>
+
+<p>giving the output:</p>
+
+<pre><code>(1, p. 3) (2, p. 10)</code></pre>
+
+<p>I recognize that this is not really a standardized format, but again I remind
+you that the bibliography support in MultiMarkdown is minimal. If you want
+more control, or adherence to proper style rules, you need a more powerful
+bibliography tool.</p>
+
+<p>I have written a perl script that will join these serial citations into one,
+<code>cleancites.pl</code>. It is run by default by the default MultiMarkdown usage
+scripts.</p>
+
+<h4 id="bibtexsupport">BibTeX Support</h4>
+
+<p>If you are a user of BibTeX, you may use it to control your references. Simply
+set the <code>Bibtex</code> and <code>Bibliographystyle</code> metadata as described in the section
+on <a href="#metadata" title="Metadata">Metadata</a>, and use my xhtml2latex XSLT files as examples.</p>
+
+<p>If you use this, you are not required to define your references within your
+MultiMarkdown document.</p>
+
+<h4 id="advancedcitationswithnatbib">Advanced Citations with natbib</h4>
+
+<p>Advanced LaTeX users are probably familiar with the
+<a href="http://www.ctan.org/tex-archive/help/Catalogue/entries/natbib.html">natbib</a>
+package, which adds additional features for bibliographic citations. It offers
+two new citation commands, <code>\citet</code> and <code>\citep</code>.</p>
+
+<p>To use the advanced natbib features:</p>
+
+<ol>
+<li>You must have the natbib package installed for LaTeX</li>
+<li>You must use an appropriate XSLT file that enables the natbib package (<code>memoir-natbib.xslt</code> is an example - you can make your own)</li>
+</ol>
+
+<p>By default, citations occur using the <code>\citep</code> command.</p>
+
+<p>To use a <code>\citet</code> citation, follow the example below:</p>
+
+<pre><code>In their seminal paper, [Smith and Jones; p 42][#Smith1990] argue
+convincingly that....
+
+[#Smith1990]: Smith, R, and Jones, K. *Some Fancy Article* etc...</code></pre>
+
+<p>The text before the semi-colon indicates that we want a textual citation. In
+the XHTML version, the text you enter becomes the text in the sentence. When
+converted to LaTeX, your text is actually removed and the natbib package
+handles it for you. The text after the semi-colon is the usual locator text
+(if you don’t want a locator, just leave it blank after the semi-colon).</p>
+
+<p>If you don’t include a semi-colon, then the <code>\citep</code> command is used in the
+usual fashion.</p>
+
+<h3 id="mathsyntax">Math Syntax<a href="#ToC-mathsyntax"> ↩</a></h3>
+
+<h4 id="introductiontomathsupport">Introduction to Math support</h4>
+
+<p><strong>Note</strong>: <em>Math support within MultiMarkdown is created using MathML. MathML
+is not fully supported in many browsers, so your mileage may vary (I honestly
+don’t care whether Internet Explorer works — get a real browser. Support
+within Firefox is pretty good, but not perfect.) This feature is quite useful,
+however, when generating a PDF via LaTeX.</em></p>
+
+<p><em>To view a file with MathML properly in Firefox, it must have the file ending
+“.xhtml”. I don’t know why, and it seems dumb that file extensions are so
+important in 2007. But for now, that’s the way it is.</em></p>
+
+<p>MultiMarkdown supports <a href="http://en.wikipedia.org/wiki/ASCIIMathML">ASCIIMathML</a>
+a syntax for converting mathematical equations from plain text into
+<a href="http://en.wikipedia.org/wiki/MathML">MathML</a>. MathML can be used within
+properly formatted XHTML documents to display well typeset mathematical
+formula.</p>
+
+<p>The conversion used to managed by
+<a href="http://www.jcphysics.com/ASCIIMath/">ASCIIMathPHP</a>, which was a PHP script
+that had to be run separately from MultiMarkdown itself. As of version
+2.0b.b4, however, I am using the
+<a href="http://search.cpan.org/~nodine/Text-ASCIIMathML-0.5/">Text::ASCIIMathML</a> Perl
+module for support built into the MultiMarkdown script.</p>
+
+<h4 id="multimarkdownmathsyntax">MultiMarkdown Math Syntax</h4>
+
+<p>Basically, use use <code>&lt;&lt;</code> and <code>&gt;&gt;</code> as delimiters to indicate that you are
+including math in your document. You can use this to create an inline formula,
+or you can create independent equations, each in it’s own paragraph. These can
+also then be converted properly into LaTeX math environments.</p>
+
+<p>Additionally, you can include a <code>[label]</code> tag at the end of the equation to
+allow you to reference it elsewhere in your text with the label. For example:</p>
+
+<pre><code>&lt;&lt; e^(i pi) + 1 = 0 [Euler's identity]&gt;&gt;
+
+&lt;&lt; x_(1,2) = (-b+-sqrt(b^2-4ac))/(2a) [quadratic equation solution]&gt;&gt;
+
+You can also include formulas within a sentence, such as
+&lt;&lt;x^2 + y^2 = 1&gt;&gt;.  You can then make a reference to
+[Euler's identity].</code></pre>
+
+<p>is converted into:</p>
+
+<blockquote>
+  <p><math xmlns="http://www.w3.org/1998/Math/MathML" id="eulersidentity" display="block"><mstyle><msup><mi>e</mi><mrow><mi>i</mi><mi>π</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mstyle></math></p>
+  
+  <p><math xmlns="http://www.w3.org/1998/Math/MathML" id="quadraticequationsolution" display="block"><mstyle><msub><mi>x</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub><mo>=</mo><mfrac><mrow><mo>-</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mstyle></math></p>
+  
+  <p>You can also include formulas within a sentence, such as
+  <math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mstyle></math>. You can then make a reference to <a href="#eulersidentity" title="Euler's identity">Euler’s identity</a>.</p>
+</blockquote>
+
+<h4 id="superscripts">Superscripts</h4>
+
+<p>By using the math mode above, you can include superscripts and the like in
+MultiMarkdown documents that don’t necessarily have to be separate formulas.
+For example:</p>
+
+<pre><code>&lt;&lt;2^pi&gt;&gt;</code></pre>
+
+<p>becomes </p>
+
+<blockquote>
+  <p><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle><msup><mn>2</mn><mi>π</mi></msup></mstyle></math>.</p>
+</blockquote>
+
+<p>This is, of course, subject to the same limitations as MathML in general.</p>
+
+<h4 id="mathmldifficulties">MathML Difficulties</h4>
+
+<p>There are some glitches in this process. First, many browsers don’t fully
+support MathML, and sometimes you have to go through great lengths to get the
+browser to recognize it properly. Firefox, for instance, requires an <code>.xhtml</code>
+extension to properly recognize the file as <code>XHTML</code> instead of <code>HTML</code>. This
+may not be an ideal solution for everybody, but it <strong>does</strong> allow you to use a
+plain english syntax to represent mathematical formulas and symbols within
+Markdown documents, which was my goal. Others may prefer to use custom
+solutions using raw LaTeX source, but I didn’t want to have to learn the LaTeX
+math syntax.</p>
+
+<p>On the up side, however, this does give wonderful output when combined with my
+XSLT scripts to generate LaTeX documents and PDF’s. I am open to input on this
+feature, and suspect it will become increasingly useful as browser support for
+MathML improves.</p>
+
+<p>For more information on supporting MathML in web browsers, I have written a
+brief introduction to 
+<a href="http://fletcherpenney.net/Supporting_MathML">Supporting MathML</a> on my web
+site.</p>
+
+<h3 id="definitionlists">Definition Lists<a href="#ToC-definitionlists"> ↩</a></h3>
+
+<p>MultiMarkdown has support for definition lists using the same syntax used in
+<a href="http://www.michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a>. Specifically:</p>
+
+<pre><code>Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+:   An american computer company.
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.</code></pre>
+
+<p>becomes:</p>
+
+<blockquote>
+  <dl>
+  <dt>Apple</dt>
+  <dd>
+  <p>Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.</p>
+  </dd>
+  <dd>
+  <p>An american computer company.</p>
+  </dd>
+  
+  <dt>Orange</dt>
+  <dd>
+  <p>The fruit of an evergreen tree of the genus Citrus.</p>
+  </dd>
+  
+  </dl>
+</blockquote>
+
+<p>You can have more than one term per definition by placing each term on a
+separate line. Each definition starts with a colon, and you can have more than
+one definition per term. You may optionally have a blank line between the last
+term and the first definition.</p>
+
+<p>Definitions may contain other block level elements, such as lists,
+blockquotes, or other definition lists.</p>
+
+<p>Unlike PHP Markdown Extra, all definitions are wrapped in <code>&lt;p&gt;</code> tags. First, I
+was unable to get Markdown <em>not</em> to create paragraphs. Second, I didn’t see
+where it mattered - the only difference seems to be aesthetic, and I actually
+prefer the <code>&lt;p&gt;</code> tags in place. Let me know if this is a problem.</p>
+
+<p>See the <a href="http://www.michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a> page for more information.</p>
+
+<h3 id="appendices">Appendices<a href="#ToC-appendices"> ↩</a></h3>
+
+<p>If you want to designate the final subgroup of chapters as appendices,  you can include an <code>h1</code> or <code>h2</code> level header (as appropriate based on your document) with the title <code>Appendices</code>.  The chapters that follow would be considered appendices when the document is converted to LaTeX using the memoir class.  Since XHTML doesn’t have a concept of appendices, it has no real meaning, but would at least designate this to the reader.</p>
+
+<h3 id="glossaries">Glossaries<a href="#ToC-glossaries"> ↩</a></h3>
+
+<p>MultiMarkdown has a feature that allows footnotes to be specified as glossary
+terms. It doesn’t do much for XHTML documents, but the XSLT file that converts
+the document into LaTeX is designed to convert these special footnotes into
+glossary entries.</p>
+
+<p>The glossary format for the footnotes is:</p>
+
+<pre><code>[^glossaryfootnote]: glossary: term (optional sort key)
+    The actual definition belongs on a new line, and can continue on
+    just as other footnotes.</code></pre>
+
+<p>The <code>term</code> is the item that belongs in the glossary. The <code>sort key</code> is
+optional, and is used to specify that the term should appear somewhere else in
+the glossary (which is sorted in alphabetical order).</p>
+
+<p>Unfortunately, it takes an extra step to generate the glossary when creating a
+pdf from a latex file:</p>
+
+<ol>
+<li><p>You need to have the <code>basic.gst</code> file installed, which comes with the
+memoir class.</p></li>
+<li><p>You need to run a special makeindex command to generate the <code>.glo</code> file:
+    <code>makeindex -s `kpsewhich basic.gst` -o "filename.gls" "filename.glo"</code></p></li>
+<li><p>Then you run the usual pdflatex command again a few times.</p></li>
+</ol>
+
+<p>Alternatively, you can use the code below to create an engine file for TeXShop
+(it belongs in <code>~/Library/TeXShop/Engines</code>). You can name it something like
+<code>MemoirGlossary.engine</code>. Then, when processing a file that needs a glossary,
+you typeset your document once with this engine, and then continue to process
+it normally with the usual LaTeX engine. Your glossary should be compiled
+appropriately. If you use <a href="http://www.uoregon.edu/~koch/texshop/" title="TeXShop Homepage">TeXShop</a>, this is the way to go.</p>
+
+<p><strong>Note</strong>: <em>Getting glossaries to work is a slightly more advanced LaTeX
+feature, and might take some trial and error the first few times.</em></p>
+
+<pre><code>#!/bin/ 
+
+set path = ($path /usr/local/teTeX/bin/powerpc-apple-darwin-current 
+    /usr/local/bin) # This is actually a continuation of the line above
+
+set basefile = `basename "$1" .tex`
+
+makeindex -s `kpsewhich basic.gst` -o "${basefile}.gls" "${basefile}.glo"</code></pre>
+
+<h3 id="poetrymode">Poetry Mode<a href="#ToC-poetrymode"> ↩</a></h3>
+
+<p>By default, when you have a section of text indented with a tab, MultiMarkdown
+interprets this as a code block. This allows you to more exactly control the
+spacing and line endings, but it also applies a monospace font in both the
+XHTML and LaTeX outputs. This is the usual way of demonstrating source code in
+documents.</p>
+
+<p>Some authors, however, don’t write about source code, but would like a way to
+control line endings (when writing poetry, for example).</p>
+
+<p>To accomplish this, there are several alternate XSLT files included within the
+MultiMarkdown distribution that are labelled with a <code>poetry</code> filename. These
+XSLT files handle the code blocks in a slightly different way to make them
+more suitable for text, rather than code. I encourage you to give this a try.</p>
+
+<p>At the current time, there is no way to use both formats within the same
+document, except to format them manually. This may change in the future,
+depending on some decisions John Gruber needs to make about the standard
+Markdown syntax.</p>
+
+<h3 id="miscellanea">Miscellanea<a href="#ToC-miscellanea"> ↩</a></h3>
+
+<p>In addition to what is mentioned elsewhere in this document, MultiMarkdown
+does a few things slightly differently:</p>
+
+<ul>
+<li><p><code>&amp;copy;</code> entities are converted to <code>&amp;#xA9;</code> so that they can pass through an
+XSLT parser</p></li>
+<li><p><code>*</code> and <code>_</code> are not interpreted as <code>&lt;strong&gt;</code> or <code>&lt;em&gt;</code> when they occur in
+the middle of words. This caused too many problems with URL’s.</p></li>
+</ul>
+
+<p>MultiMarkdown supports the conversion of colored spans of text from XHTML to
+LaTeX using the xcolor package. For example:</p>
+
+<pre><code>&lt;span style="color:#888888"&gt;net&lt;/span&gt;</code></pre>
+
+<p>becomes:</p>
+
+<pre><code>{\color[HTML]{888888} net}</code></pre>
+
+<p>There is not currently a syntax shortcut for this, you have to manually add
+the <code>&lt;span&gt;</code> information. This technique is used to support annotations from
+Scrivener, for example.</p>
+
+<h2 id="multimarkdownandlatex">MultiMarkdown and LaTeX<a href="#ToC-multimarkdownandlatex"> ↩</a></h2>
+
+<p><a href="http://www.latex-project.org/">LaTeX</a> is a professional quality typesetting
+system that can be used to take plain text markup and produce a high quality
+pdf, complete with table of contents, index, glosssary, etc. It’s a fairly
+complicated program, but capable of doing most of the work for you. One of my
+goals with MultiMarkdown was to make it even easier to create a LaTeX
+document, with minimal knowledge of the LaTeX syntax. In fact, you can create
+fairly complex documents without any understanding of how LaTeX works, as long
+as you have it installed correctly.</p>
+
+<p>That said, MultiMarkdown is not simply a preprocessor for LaTeX files, so
+there will always be LaTeX commands that are just not available from within
+MultiMarkdown. If you’re a LaTeX expert, you might find that after
+MultiMarkdown runs, you want to go and hand tweak a few parts to get things
+just right. But for the average user and average document, I suspect the
+default output will be just fine.</p>
+
+<p>The settings to pay particular attention to:</p>
+
+<ul>
+<li><p>You must choose an XSLT file to convert the MultiMarkdown-generated XHTML
+into LaTeX; you do this by setting the <code>LaTeX XSLT</code> metadata. If you do not
+choose one, the default is <code>memoir.xslt</code>. Most of my XSLT files are based
+around the <code>memoir</code> package — it’s the one I’m familiar with, it’s very
+flexible, and has high quality output, and lots of features. That said, you
+are welcome to create your own XSLT files to use whatever packages you
+prefer. The beauty of the XSLT transformation process is that it can be
+completely reconfigured however you like.</p></li>
+<li><p>Depending on what sort of document you are creating, you may need to set the
+<code>Base Header Level</code> metadata. For example, if you are creating a <code>memoir</code>
+based document, and wish for your top-level section to be a chapter, rather
+than a “part”, you could set <code>Base Header Level</code> to 2. It’s easier to do
+than explain, but basically it moves all levels of your structure by the
+specified number of steps.</p></li>
+<li><p>You likely will want to set as much of the basic metadata as possible (e.g.
+<code>Title</code>, <code>Author</code>, <code>Date</code>, <code>Keywords</code>, etc) as most of this is converted to
+a format that is used in the resulting PDF.</p></li>
+</ul>
+
+<p>Also, MultiMarkdown has support for
+<a href="http://en.wikipedia.org/wiki/BibTeX">BibTeX</a>, glossaries, html links,
+internal links between sections of the document, math formatting, etc. Most of
+the “major” features of LaTeX are available using the standard MultiMarkdown
+syntaxes. If there is something you don’t see, just ask — it may exist, or I
+might be able to add it if appropriate.</p>
+
+<p>The general process of creating a PDF via LaTeX is the same as the normal use
+of MultiMarkdown, with one additional step:</p>
+
+<ol>
+<li><p>Create your text source file</p></li>
+<li><p>Using your method of choice, convert the text file to XHTML, and then
+convert the XHTML to LaTeX (most of my tools will do this as a single step as
+far as the user is concerned).</p></li>
+<li><p>Convert the LaTeX source file to PDF using the tool of your choice (my Drag
+and Drop <a href="http://fletcherpenney.net/MultiMarkdown_Drag_and_Drop">application</a>,
+<a href="http://www.uoregon.edu/~koch/texshop/" title="TeXShop Homepage">TeXShop</a>, <a href="http://www.phys.psu.edu/~collins/software/latexmk-jcc/">latexmk</a>,
+manually, etc.)</p></li>
+</ol>
+
+<p>Due to the complexity of the LaTeX source, it can be hard to troubleshoot when
+using an automatic tool. If something doesn’t work, I recommend first trying
+to get your MultiMarkdown text file converted to XHTML and verify that it is
+correct. Then convert the XHTML to LaTeX and be sure that you can watch the
+status messages that occur during processing of the LaTeX file - they will
+usually give you a hint as to where the problem lies. Remember, just because
+the XHTML version of a MultiMarkdown document is valid XHTML does not mean the
+resulting LaTeX will be totally valid.</p>
+
+<h2 id="advancedfeaturesandcustomization">Advanced Features and Customization<a href="#ToC-advancedfeaturesandcustomization"> ↩</a></h2>
+
+<p>I believe that MultiMarkdown works pretty well “out of the box” for the vast
+majority of users (of course, I’m not biased or anything…) But more advanced
+users will eventually start thinking about features that they wish existed.
+Some of these features are very specific to their own documents and style, but
+others are more general and would be of use to everyone.</p>
+
+<h3 id="howdoifindoutaboutfeaturex">How do I find out about feature x?<a href="#ToC-howdoifindoutaboutfeaturex"> ↩</a></h3>
+
+<p>My recommended approach is:</p>
+
+<ol>
+<li><p>Make sure you check through the documentation on the web site (there is a
+search feature). An increasing number of feature requests are for things that
+already exist.</p></li>
+<li><p>Check the MultiMarkdown discussion list to see if someone has already
+suggested your feature, or better yet, has already solved it.</p></li>
+<li><p>Decide whether it’s something you could try and do yourself, or whether you
+need to ask for help to accomplish it. Either way, the results can be shared
+on my web site to help others.</p></li>
+</ol>
+
+<h3 id="howdoicustomizemultimarkdown">How do I customize MultiMarkdown?<a href="#ToC-howdoicustomizemultimarkdown"> ↩</a></h3>
+
+<p>The first step in trying to customize MultiMarkdown is to figure out where in
+the workflow the customization needs to occur:</p>
+
+<ol>
+<li><p>Does the MultiMarkdown perl script need to be modified to add a new syntax,
+or change the way the output is generated? There should be fewer and fewer
+necessary changes in this step as the MultiMarkdown syntax matures. Also, note
+that I am hesitant to add new features at this level that increase the
+complexity of markup. It’s not impossible, but I will definitely need to be
+convinced it’s the only way to go.</p></li>
+<li><p>Can the desired feature be implemented through a modification of one of the
+XSLT files? XSLT is a powerful tool, and can be used to really customize the
+XHTML or LaTeX output from a MMD document. (<em>Many users would likely benefit
+from a generic XHTML to RTF XSLT stylesheet - I have been unable to locate one
+that would work, and I have no need of RTF documents. This would be too much
+work for too little gain for me, but I am sure someone out there needs exactly
+this sort of tool.</em>) Browse through the <code>XSLT</code> directory and look to see if
+there is a stylesheet that could be modified to do what you want. The XSLT
+syntax is not that complicated, but does take some getting used to. As
+examples, the <code>xhtml-toc.xslt</code> script parses the header tags in the XHTML
+output, and creates an automatic table of contents at the top of the XHTML
+file. The <code>xhtml-poetry-support.xslt</code> file looks for code blocks that start
+with <code>[poetry]</code> and changes them to a poetry mode, rather than code (basically
+removing the monospace font).</p></li>
+<li><p>Does the desired feature need to be implemented in a separate
+post-processing script? For example, for LaTeX documents I use a script called
+<code>cleancites.pl</code> that looks for strings of multiple citations to shorten the
+syntax. You could easily create a script to do whatever you like and
+incorporate it into your work flow.</p></li>
+</ol>
+
+<p>In summary, a great many features and customizations can be added to
+MultiMarkdown by users. I also recommend that you consider sharing any of your
+customizations back to the MultiMarkdown community - I am happy to put any
+files or links on my site, if you are interested.</p>
+
+<h3 id="wheredoidiginthemultimarkdownpackagetofindoutmore">Where do I dig in the MultiMarkdown package to find out more?<a href="#ToC-wheredoidiginthemultimarkdownpackagetofindoutmore"> ↩</a></h3>
+
+<p>Again, places to look for inspiration:</p>
+
+<ul>
+<li><p>MultiMarkdown/bin - this is where the “glue” scripts live that manage
+different MultiMarkdown workflow patterns. You can create your own shell
+scripts that can add additional steps to your workflow here.</p></li>
+<li><p>MultiMarkdown/Utilities - a couple of utility scripts and the
+<code>cleancites.pl</code> post-processing script live here; you can add files here and
+incorporate them into your work flow.</p></li>
+<li><p>MultiMarkdown/XSLT - XSLT files for modifying XHTML files or creating LaTeX
+files go here. Lots of examples for different styles of output or
+customizing the way various features work.</p></li>
+<li><p><a href="http://fletcherpenney.net/XSLT_Files">http://fletcherpenney.net/XSLT_Files</a> - this is where I will place various
+user submitted files that may be of interest, or offer a starting point for
+further customization. Please consider submitting your own improvements here
+as well.</p></li>
+</ul>
+
+<h2 id="componentsoftware">Component Software<a href="#ToC-componentsoftware"> ↩</a></h2>
+
+<p>The MultiMarkdown system is actually a patchwork of multiple programs, which
+are run in a specific order by shell scripts. I have written the glue
+utilities, and the MultiMarkdown modifications to John Gruber’s original
+Markdown program, but I can’t take credit for the rest.</p>
+
+<h3 id="mmd">MultiMarkdown<a href="#ToC-mmd"> ↩</a></h3>
+
+<ul>
+<li>by Fletcher T. Penney</li>
+<li><a href="http://fletcherpenney.net/MultiMarkdown">http://fletcherpenney.net/MultiMarkdown</a></li>
+</ul>
+
+<p>MultiMarkdown is my update to John Gruber’s
+<a href="http://daringfireball.net/projects/markdown/">Markdown</a> software. It is what
+this bundle is based on. To learn more about why you would want to use this
+bundle, check out the web page for MultiMarkdown.</p>
+
+<h3 id="smartypants">SmartyPants<a href="#ToC-smartypants"> ↩</a></h3>
+
+<ul>
+<li>by John Gruber</li>
+<li><a href="http://daringfireball.net/projects/smartypants/">http://daringfireball.net/projects/smartypants/</a></li>
+</ul>
+
+<p>SmartyPants is another program by John Gruber, and is designed to add “smart”
+typography to HTML documents, including proper quotes, dashes, and ellipses.
+Additionally, there are several variations of the SmartyPants files to handle
+different localizations (specifically, Dutch, French, German, and Swedish).
+These localizations were provided by Joakim Hertze.</p>
+
+<h3 id="text::asciimathml">Text::ASCIIMathML<a href="#ToC-text::asciimathml"> ↩</a></h3>
+
+<ul>
+<li>by Mark Nodine</li>
+<li><a href="http://search.cpan.org/~nodine/">http://search.cpan.org/~nodine/</a></li>
+</ul>
+
+<p>This perl module adds support for converting the ASCIIMathML syntax into
+MathML markup suitable for inclusion in XHTML documents.</p>
+
+<h3 id="asciimathphpdeprecated">ASCIIMathPHP (Deprecated)<a href="#ToC-asciimathphpdeprecated"> ↩</a></h3>
+
+<ul>
+<li>by Kee-Lin Steven Chan</li>
+<li><a href="http://www.jcphysics.com/ASCIIMath/">http://www.jcphysics.com/ASCIIMath/</a></li>
+</ul>
+
+<p>This bundle includes the MultiMarkdown specific variant of the original
+ASCIIMathPHP. It allows you to use the ASCIIMath syntax to describe
+mathematical formulas in plain text language.</p>
+
+<p>This software has been replaced by Text::ASCIIMathML.</p>
+
+<h3 id="xsltmathml">XSLTMathML<a href="#ToC-xsltmathml"> ↩</a></h3>
+
+<ul>
+<li>by Vasil Yaroshevich</li>
+<li><a href="http://www.raleigh.ru/MathML/mmltex/index.php?lang=en">http://www.raleigh.ru/MathML/mmltex/index.php?lang=en</a></li>
+</ul>
+
+<p>This bundle includes the MultiMarkdown specific variant of the original
+XSLTMathML. It converts XHTML with MathML markup into LaTeX math environment
+code. Very handy for making well typeset documents that are math-heavy.</p>
+
+<h2 id="applicationsthatsupportmultimarkdown">Applications That Support MultiMarkdown<a href="#ToC-applicationsthatsupportmultimarkdown"> ↩</a></h2>
+
+<p>There are several applications and utilities out there that include support
+for MultiMarkdown, that can make it even easier to create your output
+documents.</p>
+
+<p>If you know of something not included here, please let me know.</p>
+
+<h3 id="multimarkdowndraganddrop">MultiMarkdown Drag and Drop<a href="#ToC-multimarkdowndraganddrop"> ↩</a></h3>
+
+<p>Early on, as MultiMarkdown became increasingly powerful (and complex) I
+realized that most people would want something a little easier to use than
+what had become a rather complicated command line string.</p>
+
+<p>The first solution was a set of Drag and Drop applications created using
+<a href="http://sveinbjorn.sytes.net/platypus" title="Platypus Homepage">Platypus</a>. These were designed to allow you to drop a MultiMarkdown text file
+on the application icon, and they spit out a .xhtml, .pdf, .rtf, or .tex file,
+depending on which application you used.</p>
+
+<p>These utilities are still available, and have been updated to work with the
+“Common” MultiMarkdown Installation:</p>
+
+<ul>
+<li><a href="http://files.fletcherpenney.net/MultiMarkdownDragAndDrop.zip">http://files.fletcherpenney.net/MultiMarkdownDragAndDrop.zip</a></li>
+</ul>
+
+<h3 id="scrivener">Scrivener<a href="#ToC-scrivener"> ↩</a></h3>
+
+<p><a href="http://www.literatureandlatte.com/scrivener.html" title="Scrivener">Scrivener</a> is a:</p>
+
+<blockquote>
+  <p>… project management tool for writers that acts like your own
+  little writing shed at the bottom of the garden, where you have
+  cork notice-boards, ring-binders, photos, clippings paperclipped
+  to jottings, notebooks and reams of typewritten pages piling up
+  - along with a secretary who keeps it all in neat piles and uses
+  his speed-reading skills to find what you need as soon as you need
+  it. <span class="markdowncitation"> (<a href="#Blount">2</a>)</span></p>
+</blockquote>
+
+<p>As of beta 3, Scrivener has the ability to export to a MultiMarkdown text
+file, or to run the conversion utilities to create XHTML, RTF, or LaTeX files.
+It also has support for MultiMarkdown metadata.</p>
+
+<p>Scrivener’s strengths, as they relate to MultiMarkdown, included the ability
+to arrange and re-arrange your document as desired using its outliner view,
+cork-board, and other features. It also has some limited ability to convert
+RTF bold and italic formatting into MultiMarkdown syntax, which can be useful
+when converting documents from other formats.</p>
+
+<p>Scrivener is primarily focused towards creative writing, but when combined
+with MultiMarkdown it is very useful for academic and technical writing where
+a LaTeX file is highly desirable.</p>
+
+<p>Keith Blount has done a great job with Scrivener, and I was happy to be able
+to help implement support for MultiMarkdown. I look forward to helping to
+continue to use and refine this program myself.</p>
+
+<p>At this time, Scrivener is in public beta, and should be available for
+purchase towards the end of 2006 or beginning of 2007. But the beta is very
+usable as is, and gives you until Jan 2007 or so to try it out.</p>
+
+<p>For more information, I have created a User’s Guide to MultiMarkdown and
+Scrivener:</p>
+
+<ul>
+<li><a href="http://fletcherpenney.net/Using_MultiMarkdown_with_Scrivener">http://fletcherpenney.net/Using_MultiMarkdown_with_Scrivener</a></li>
+</ul>
+
+<h3 id="textmate">TextMate<a href="#ToC-textmate"> ↩</a></h3>
+
+<p><a href="http://macromates.com/" title="TextMate">TextMate</a> is a powerful text editor that:</p>
+
+<blockquote>
+  <p>brings Apple’s approach to operating systems into the world of text
+  editors. By bridging UNIX underpinnings and GUI, TextMate cherry-picks
+  the best of both worlds to the benefit of expert scripters and novice
+  users alike….</p>
+  
+  <p>Created by a closet UNIX geek who was lured to the Mac platform by
+  its ease of use and elegance, TextMate has been referred to as the
+  culmination of Emacs and OS X and has resulted in countless requests
+  for both a Windows and Linux port, but TextMate remains exclusive for
+  the Mac, and that is how we like it!<span class="markdowncitation"> (<a href="#macromates">3</a>)</span></p>
+</blockquote>
+
+<p>TextMate is somewhere between a text editor for programmers, and a writing
+tool. If you like being able to customize your writing environment, and like
+fancy tools to handle the formatting for you, then TextMate might be the app
+for you.</p>
+
+<p>Allan Odgaard created an initial Bundle that added Markdown support to
+TextMate. It included some basic MultiMarkdown support as well. But to be
+honest, <em>I</em> had trouble getting it to work. And if I had difficulty, I can
+only imagine how much trouble others had.</p>
+
+<p>So I created my own Bundle. It includes a lot of features that automatically
+format metadata, lists, tables, headers, etc. It can clean up the text to make
+it look as presentable as possible in plain text, and it can then
+automatically convert your text into XHTML, RTF, Word, or LaTeX/PDF.</p>
+
+<p>My TextMate Bundle is available on my web site:</p>
+
+<ul>
+<li><a href="http://fletcher.freeshell.org/wiki/MultiMarkdownTextMateBundle">http://fletcher.freeshell.org/wiki/MultiMarkdownTextMateBundle</a></li>
+</ul>
+
+<p>It is designed to play nicely with the default Markdown Bundle, so you can
+have them both installed. You may wish to disable a few features from the
+original bundle, but that is totally up to you.</p>
+
+<h3 id="usingscrivenerandtextmatetogether">Using Scrivener and TextMate Together<a href="#ToC-usingscrivenerandtextmatetogether"> ↩</a></h3>
+
+<p>It is possible, using the “Edit in TextMate” feature from TextMate. Basically,
+it adds the ability to edit any Cocoa based text editor view in TextMate. This
+allows you to edit the text from a Scrivener document in TextMate, in order to
+take advantage of the automatic formatting, while still retaining the
+organizational features of Scrivener.</p>
+
+<p>This feature has its limitations (it breaks the undo stack in Scrivener) and
+is only for advanced users. I take no responsibility for it, as I didn’t write
+Scrivener or TextMate. But it can be useful…</p>
+
+<p>To learn more, check out the information on Cocoa Text Fields:</p>
+
+<ul>
+<li><a href="http://macromates.com/textmate/manual/using_textmate_from_terminal">http://macromates.com/textmate/manual/using_textmate_from_terminal</a></li>
+</ul>
+
+<h3 id="thecommonmultimarkdownapproach">The “Common” MultiMarkdown approach<a href="#ToC-thecommonmultimarkdownapproach"> ↩</a></h3>
+
+<p>During beta testing of the MultiMarkdown support with Scrivener, it was
+proposed that having a standard location for MultiMarkdown could make it easy
+to integrate with various applications, and to allow the user a single place
+to update their MultiMarkdown files, independent of the application it was
+being used with.</p>
+
+<p>For Mac OS X users, this boils down to allowing a MultiMarkdown installation
+to be placed in one of two locations, where it is available to any application
+that knows to look for it there:</p>
+
+<ul>
+<li><p>~/Library/Application Support/MultiMarkdown</p></li>
+<li><p>/Library/Application Support/MultiMarkdown</p></li>
+</ul>
+
+<p>The first is available only to the user, and the second is available to anyone
+on that computer.</p>
+
+<p>When Scrivener, or another application that supports this feature is run, it
+checks to see if a MultiMarkdown installation is available in either of those
+places. If not (the first time you run the program, for instance), then some
+programs might install a version of MultiMarkdown here; others might simply
+use an a copy of MultiMarkdown embedded within the application bundle.</p>
+
+<p>The benefit of this approach is that if I update MultiMarkdown, you can simply
+replace the updated files in the Application Support folder, without having to
+update the other applications.</p>
+
+<p>Please let me know if you have suggestions on improving this feature, or if
+you are interested in including support for MultiMarkdown in your own
+application.</p>
+
+<p>Naturally, this approach only works with Mac OS X. If anyone is interested in
+working on a similar feature for other operating systems, please let me know.</p>
+
+<h3 id="createyourown">Create Your Own<a href="#ToC-createyourown"> ↩</a></h3>
+
+<p>Between shell scripts, applescripting, Automator, and other tools, you can
+usually find an easy way to incorporate MultiMarkdown into your own workflow.
+If you find something that you think should be added here, let me know!</p>
+
+<h2 id="technicalissues">Technical Issues<a href="#ToC-technicalissues"> ↩</a></h2>
+
+<p>The MultiMarkdown system is actually a fairly complex group of programs, which
+includes multiple perl utilities, a PHP program, and multiple XSLT files. With
+some hand waving, I try to make it look like a single coherent program, but it
+actually uses multiple utilities written by multiple people.</p>
+
+<p>This section is designed to address some of these issues, and implications
+they may have for users, programmers, etc.</p>
+
+<h3 id="xmlnamespaceissues">XML Namespace Issues<a href="#ToC-xmlnamespaceissues"> ↩</a></h3>
+
+<p>As of version 2.0.a3, there has been a complete overhaul of the way XML
+namespaces are handled. This required changing all of the XSLT files to use an
+“html” alias for the “http://www.w3.org/1999/xhtml” namespace.</p>
+
+<p>It appears to be working, including support for MathML.</p>
+
+<p>If you have any custom XSLT files, you will need to make the same changes,
+specifically:</p>
+
+<p>Make your stylesheet declaration look like:</p>
+
+<pre><code>&lt;xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    version="1.0"&gt;</code></pre>
+
+<p>And relabel any references to XHTML elements, so that they are preceeded by “html:”, e.g. </p>
+
+<pre><code>&lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates select="html/head"/&gt;
+    &lt;xsl:apply-templates select="html/body"/&gt;
+    &lt;xsl:call-template name="latex-footer"/&gt;
+&lt;/xsl:template&gt;</code></pre>
+
+<p>should look like this:</p>
+
+<pre><code>&lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates select="html:html/html:head"/&gt;
+    &lt;xsl:apply-templates select="html:html/html:body"/&gt;
+    &lt;xsl:call-template name="latex-footer"/&gt;
+&lt;/xsl:template&gt;</code></pre>
+
+<p>I have left the <code>-novalid</code> and <code>-nonet</code> options in place to prevent
+unnecessary errors when you are not connected to the internet, but these could
+be removed if desired.</p>
+
+<h3 id="xelatextips">XeLaTeX Tips<a href="#ToC-xelatextips"> ↩</a></h3>
+
+<p>If you are using XeLaTeX to process your document (useful for utilizing Mac OS X fonts in your document), you want to use font declarations like this:</p>
+
+<pre><code>\font\addressbold="Garamond Bold:mapping=tex-text" at 8pt</code></pre>
+
+<p>By including the “:mapping=tex-text” portion, you regain use of smart quotes, en- and em- dashes, etc.  I’m sure most XeLaTeX users know this, but it took me a bit of trial and error to discover it….</p>
+
+<h2 id="acknowledgments">Acknowledgments<a href="#ToC-acknowledgments"> ↩</a></h2>
+
+<p>Thanks to the individuals and groups below for their contributions to
+improving Markdown and MultiMarkdown:</p>
+
+<ul>
+<li>John Gruber</li>
+<li>Michel Fortin</li>
+<li>Jonathan Weber</li>
+<li>Mark Eli Kalderon</li>
+<li>Choan C. Gálvez</li>
+<li>Dr. Drang</li>
+<li>Robert McGonegal</li>
+<li>David Green</li>
+<li>Trey Pickard</li>
+<li>Saleem</li>
+<li>Melinda Norris</li>
+<li>Sean Wallace</li>
+<li>Allan Odgaard</li>
+<li>Stefan Brantschen</li>
+<li>Keith Blount</li>
+<li>Amber Vaesca</li>
+<li>Gerd Knops</li>
+<li>John Purnell</li>
+<li>Jonathan Coulombe</li>
+<li>Jason Bandlow</li>
+<li>Joakim Hertze</li>
+<li>Kee-Lin Steven Chan</li>
+<li>Vasil Yaroshevich</li>
+<li>Matt Neuburg</li>
+<li>James Howison</li>
+<li>Edward Nixon</li>
+<li>etherean</li>
+<li>Özgür Gökmen</li>
+<li>Chad Schmidt</li>
+<li>Greg (gr)</li>
+<li>Ben Jennings</li>
+<li>Silvan Kaiser</li>
+<li>Tomas Doran</li>
+</ul>
+
+<p>and others I have surely forgotten….</p>
+
+<h2 id="knownissues">Known Issues<a href="#ToC-knownissues"> ↩</a></h2>
+
+<ul>
+<li><p>The <code>&lt;&lt;...&gt;&gt;</code> syntax can cause only the first <code>&lt;</code> to be encoded as <code>&lt;</code> if
+there is no trailing space (e.g. <code>&lt;&lt;something&gt;&gt;</code> vs. <code>&lt;&lt; something &gt;&gt;</code>). I
+suspect that I will have to manually look for any <code>&lt;&lt;</code> and convert them. I
+guess this is technically an issue with Markdown and not MultiMarkdown, but
+it has apparently not come up before.</p></li>
+<li><p>I tried to remove dependence on the <code>varwidth</code> package. This screws up the
+formatting of footnotes in tables, and also RTF exporting of tables. I’m not
+sure what to do - varwidth is incompatible with xcolor and is not a standard
+package. Suggestions welcome.</p></li>
+<li><p>You need to use the newest version of xsltproc if you want to make best use
+of the XSLT features (such as LaTeX formatting.) The version Apple includes
+does not support the <code>last()</code> function and can cause problems.</p></li>
+<li><p>Creating a link to an image by label doesn’t work properly anymore</p></li>
+<li><p>I’m having difficulty with getting the glossary feature to work in the
+non-memoir classes. At some point I will look into this, but if someone else
+out there can point out what I’m doing wrong, let me know.</p></li>
+<li><p>RTF support currently only exists for Mac OS X. Conversion from XHTML to RTF
+happens via Apples <code>textutil</code> tool. It is possible to write an XSLT file
+that converts from XHTML to RTF, but I have little to no interest in writing
+this myself, as I don’t really use the RTF format very often. If someone
+were interested in developing this, I would help out. An added benefit would
+be that the XSLT could actually do a better job than Apple’s tool in terms
+of footnote support and internal links.  Contact me if you’re interested.</p></li>
+<li><p>The sample MMD file creates two copies of the footnote in the <code>MultiMarkdown
+vs. Crayons</code> table, even though I only call for one. Not sure where the <code>a</code>
+footnote comes from…. Any help in tracking this down would be appreciated,
+as it didn’t used to do this.</p></li>
+</ul>
+
+<h2 id="thingstodo">Things to Do<a href="#ToC-thingstodo"> ↩</a></h2>
+
+<ul>
+<li><p>Add a syntax to allow comments that can be stripped before passing the
+output to the parser</p></li>
+<li><p>write a routine (that would be separate from MultiMarkdown) to download
+linked images, save them to a tmp directory, and then convert them for use
+within a pdf.</p></li>
+<li><p>Consider adding the ability to only convert the first instance of a
+<code>WikiWord</code> or <code>[[Free Link]]</code>, rather than each instance. I suppose this
+would have to be grouped by level, however, which would complicate
+things….</p></li>
+<li><p>Decide on appropriate management of alignment when a cell spans multiple
+columns. Currently, the alignment of the first cell is used. (If Markdown
+goes to a whitespace-based alignment option, that could be used in this
+instance.)</p></li>
+<li><p>Consider whether there is a reasonable syntax for table cells that span
+multiple rows.</p></li>
+<li><p>Consider a syntax for superscripts (this has been discussed before) - could
+convert it to MathML syntax? Or just use math markup instead as described in
+<a href="#superscripts" title="Superscripts">Superscripts</a>.</p></li>
+<li><p>Certain markup gets processed within headers and shouldn’t, e.g. <code>&lt;img&gt;</code></p></li>
+<li><p>Consider whether to incorporate the definition list syntax into a footnote
+to specify a glossary entry (or perhaps even without the footnote), or
+whether to leave well enough alone.</p></li>
+</ul>
+
+<h2 id="versionhistory">Version History<a href="#ToC-versionhistory"> ↩</a></h2>
+
+<blockquote>
+  <p>Release early, release often!</p>
+  
+  <blockquote>
+    <p>Linus Torvalds</p>
+  </blockquote>
+</blockquote>
+
+<ul>
+<li><p>2.0.b5 - spaces at end of xslt filenames won’t cause failure; use <code>\url{}</code>
+for “non-referenced” url’s in LaTeX to allow linebreaks (though they still
+don’t always break correctly — this is a problem with <code>hyperref</code> not MMD);
+don’t convert <code>^</code> to exponents in the <code>clean-text-allow-latex.xslt</code> file so
+that math code works properly; the S5 XSLT file at least partially works
+again now; update the TextMate bundle to work with Leopard; updated the
+envelope and letterhead files; include <code>6x9book-real-poetry</code> XSLT that uses
+memoir’s poetry features fairly well; rework the <code>clean-text</code> files to make
+them easier to update in the future and more modular; XHTML comments are now
+passed through as raw LaTeX; unescape encoding within comments;</p></li>
+<li><p>2.0.b4 - empty labels for headers now produce valid XHTML (e.g. no <code>id=""</code>);
+fix bug in <code>clean-text.xslt</code> that caused a problem with closing double
+quotes; the <code>.xslt</code> extension is no longer required in metadata; added
+customizable letterhead XSLT; fix bug in table support that choked on extra
+spaces at end of lines; <em>Major Change</em>: switched to Text::ASCIIMathML for
+math support, meaning that everything is once again perl based (this enables
+math features on web sites using MultiMarkdown, for example); fix bug that
+occurred when ‘Abstract’ was not the first chapter;</p></li>
+<li><p>2.0.b3 - move the <code>clean-text</code> routine from <code>xhtml2latex.xslt</code> into it’s own
+file (to allow easier modification by users); create alternate version that
+does not protect certain characters in order to allow raw LaTeX code to be
+passed through; added <code>latex-snippet.xslt</code> stylesheet for inclusion in
+outside LaTeX template systems; added <code>xhtml-poetry-support.xslt</code> and
+<code>xhtml-toc.xslt</code> to demonstrate how to extend MMD functionality for XHTML
+output with new system; fix bug in SmartyPants that processed typography
+within <code>&lt;style&gt;</code> sections (thanks AmberV); fix handling of links by
+reference in headers and handling of attributes when links are referenced
+multiple times (thanks to Edward Nixon); fix bug in epigraphs (thanks
+etherean); improve id generation for footnotes - e.g. match behavior of PHP
+Markdown Extra (thanks to Özgür Gökmen); fix bug in id generation for ToC
+for XHTML documents; fix problem with <code>\ldots</code> command (thanks to etherean
+and James Howison); fix issue with <code>&amp;#160;</code> and tilde character; fix bug
+where footnote special characters were not unescaped (thanks to Chad
+Schmidt); clean up documentation a bit;</p></li>
+<li><p>2.0.b2 - fix processing of footnotes so that ending in a blockquote doesn’t
+break validity; fix bug in <code>letter.xslt</code>; overhaul XSLT system to allow for
+different XSLT files for different output formats (e.g. HTML, RTF, LaTeX);</p></li>
+<li><p>2.0.b1 - fix bug in <code>_StripLinkDefinitions</code> that prevented detection of
+single character labels; change <code>\textwidth</code> to <code>\linewidth</code> in LaTeX export
+XSLT files (let me know if this causes problems); add Windoze compatibility
+to the perl scripts (thanks to Jason Bandlow for pointing out this problem,
+as well as for suggesting a fix);fix issues with glossary support and
+document the process; complete overhaul of the way namespaces are handled
+(<code>stripnamespace.pl</code> is no longer needed, XSLT files are rewritten, <code>-nonet</code>
+and <code>-novalid</code> should be optional for xsltproc); update the Drag and Drop
+applications to use the “Common” MMD Installation; update to Markdown
+1.0.2b8 codebase; add support for natbib and <code>\citep</code> and <code>\citet</code>;</p></li>
+<li><p>2.0.a2 - fix some minor problems with XSLTMathML; allow math to be enclosed
+in parentheses; change matching for bottomrule in tables; improve handling
+of tables with no header row (only a header column);</p></li>
+<li><p>2.0.a1 - strip spaces from metadata keys for XHTML validity; make XHTML
+footnote output more compatible with Gruber’s website and PHP Markdown
+Extra; update XSLT to address these changes (<em>Note</em>: this breaks
+compatibility with prior versions); add support for definition lists; fix
+bug when escaping WikiWords in code; add <code>XHTML Header</code> metadata, and update
+XSLT to ignore <code>&lt;style&gt;</code> tags; add support for the <code>XSLT File</code> metadata tag,
+which allows a single command to parse any MultiMarkdown file; add
+additional XSLT files; add the multimarkdown2XHTML.pl and related commands;
+article XSLT now uses the article option in memoir, rather than the article
+class; delete the report class (use memoir instead); fix a <strong>lot</strong> of
+“minor” bugs; add the “6x9book.xslt” option; allow custom cross-reference
+labels to headers; give preference to defined links over automatic
+cross-references; add “poetry” versions of several XSLT files (treat code
+blocks as formatted text, rather than code — useful for formatting poetry)</p></li>
+<li><p>2.0.a - New version numbering scheme; update to Markdown.pl 1.0.2b7 code;
+add support for <code>[link reference]</code> shortcut syntax (i.e. no trailing <code>[]</code>)
+for MultiMarkdown crossrefs; add an extra newline in verbatims to add space
+before the next paragraph; synchronize numbering schemes of all related
+MultiMarkdown tools to make it easier to ensure compatibility; add revision
+numbers to source documents to help track incompatibilities; add LaTeX
+support for <code>i.e.</code> and <code>e.g.</code>; TextMate MultiMarkdown bundle available;
+update MultiMarkdownDragAndDrop tools to new codebase; now distributed as a
+zipfile.</p></li>
+<li><p>1.0.1Multi19.4 - major update; fix issue where cross-references to images
+defined by alt text had to follow the image in the document; add support for
+MathML via ASCIIMathPHP; change <code>name</code> to <code>id</code> for footnotes; move
+_DoHeaders in front of _DoTables to allow cross-references inside tables;
+fix handling of citations without locator; a table with no header titles and
+no column alignment row is interpreted as a pull-quote - this is
+experimental and may be changed; the <code>Bibliography Title</code> metadata field is
+available for LaTeX to rename the bibliography section; multiple changes to
+XSLT files to improve compatibility; support for <code>&lt;&lt; math &gt;&gt;</code> syntax using
+ASCIIMathPHP; change <code>HeaderLevel</code> to <code>Base Header Level</code> and process it in
+XSLT rather than in the OmniOutliner tool; support for <code>Affiliation</code>
+metadata element; add equation label to possible cross-reference list;
+compatible with epigraph feature for XSLT conversion to LaTeX; document
+table labeling feature and default to caption if no label present;</p></li>
+<li><p>1.0.1Multi19.2 - require leading space before unescaping \WikiWord; fixed
+bug where attributes not included with images; add <code>Bibliography Title</code>
+metadata key; fix bug with invalid leading characters in header id
+attributes; allow ‘-’ and ‘_’ in metadata; fix handling of citations in
+footnotes; fix issue with quotes in link attributes.</p></li>
+<li><p>1.0.1Multi19.1 - minor change to bibliography formatting to allow
+translation into a \BibTeX compatible format <em>without</em> the use of a <code>.bib</code>
+file;</p></li>
+<li><p>1.0.1Multi19 - Major update; fix bugs discovered by testing with
+MarkdownTest 1.0; don’t add leading blank line if no metadata exists; fix
+parsing of link definitions, including attribute parsing; various clean- ups
+to code and documentation; improve cross-reference handling of special
+characters; fix bug in handling of wiki links (<code>/</code> is not automatically
+added any more); fix bug in <code>title</code> attributes of images; re-enable the
+inclusion of <code>DOCTYPE</code> in complete documents (this requires the use of the
+<code>-nonet</code> and <code>-novalid</code> options in xsltproc; fix bug in handling of <code>**</code>;
+fix bug where WikiWords in code blocks and spans were not unescaped; fix bug
+where digits were not allowed in metadata keys; fix numbering of footnotes
+so that they remain in proper order; add basic citation and bibliography
+features; major bug fixes and testing to precede the release of version 20
+(2.0)</p></li>
+<li><p>1.0.1Multi18 - further work to make WikiWord escaping work properly…</p></li>
+<li><p>1.0.1Multi17 - add support for “char” alignment in table columns (<strong>NOTE</strong>:
+browsers do not currently support this); fix bug with <code>\</code> in code spans when
+WikiWords are disabled; fix bug in bold/italic detection</p></li>
+<li><p>1.0.1Multi16 - can now optionally have header in first cell of each row; fix
+bug in footnote counting (thanks to Mark Eli Kalderon for pointing this
+out);</p></li>
+<li><p>1.0.1Multi15 - allow for multiple <code>&lt;tbody&gt;</code> span’s within a table; ensure
+that the variable<code>$g_empty_element_suffix</code> is used everywhere; protect code
+spans from table parsing</p></li>
+<li><p>1.0.1Multi14 - captions can now be before or after table; add syntax for
+column spanning within tables (body and header)</p></li>
+<li><p>1.0.1Multi13 - added support for CSS metadata key; allow no alignment option
+on table cells; support for captions for tables</p></li>
+<li><p>1.0.1Multi12 - added support for image/link attributes; fixed bug in table
+handling</p></li>
+<li><p>1.0.1Multi11 - added support for table syntax</p></li>
+<li><p>1.0.1Multi10 - allow emphasis at beginning of line</p></li>
+<li><p>1.0.1Multi9 - fix bug in metadata parsing</p></li>
+<li><p>1.0.1Multi8 - first draft of fix for “underscore within a word” problem that
+causes so many errors with URL’s. Now a leading whitespace is required in
+front of the “opening” <code>_</code> or <code>*</code> for it to be interpreted as emphasis or
+strong.</p></li>
+<li><p>1.0.1Multi7 - add Wiki Links support</p></li>
+<li><p>1.0.1Multi6 - correct bug in footnote id handling (Thanks to Jonathan Weber
+for pointing this out)</p></li>
+<li><p>1.0.1Multi5 - allow disabling of metadata feature</p></li>
+<li><p>1.0.1Multi4 - convert <code>&amp;copy;</code> entities to <code>&amp;#xA9;</code> (compatible with XSLT);
+generate cross-refs for images</p></li>
+<li><p>1.0.1Multi3 - fix metadata parsing in the event a key was empty</p></li>
+<li><p>1.0.1Multi2 - add support for footnotes. <strong>Major</strong> change - no longer use
+templates, but rather will focus on using XSLT to convert from XHTML output
+to other formats. I think this will be more flexible and less error prone.</p></li>
+<li><p>1.0.1M - initial release</p></li>
+</ul>
+
+<div class="footnotes">
+<hr/>
+<ol>
+
+<li id="fn:somesamplefootnote"><p>Here is the text of the footnote itself.<a href="#fnref:somesamplefootnote" class="reversefootnote"> ↩</a></p></li>
+
+</ol>
+</div>
+
+<div class="bibliography">
+<hr/>
+<p>Bibliography</p>
+
+<div id="Gruber"><p>[1] <span class="item">Daring Fireball: Markdown. <br/>
+<a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a></span></p></div>
+
+<div id="Blount"><p>[2] <span class="item">Literate and Latte - Scrivener. <br/>
+<a href="http://www.literatureandlatte.com/scrivener.html">http://www.literatureandlatte.com/scrivener.html</a></span></p></div>
+
+<div id="macromates"><p>[3] <span class="item">TextMate — The Missing Editor for Mac OS X. <br/>
+<a href="http://macromates.com/">http://macromates.com/</a></span></p></div>
+
+</div>
+</body>
+</html>
