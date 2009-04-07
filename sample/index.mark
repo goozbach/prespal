@@ -14,8 +14,6 @@ Address: goozbach@friocorte.com
 
 <!-- Start slide 1 -->
 
-<startslide />
-
 # slide 1 header
 ## Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ## Vestibulum aliquam malesuada turpis.
@@ -29,18 +27,15 @@ Address: goozbach@friocorte.com
 
 <starthandout />
 
-## Neque porro 
+## Neque porro1 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id est sit amet tellus bibendum tincidunt. Phasellus tempus lectus. Maecenas rhoncus. Nullam vitae lacus. Integer fringilla tempus quam. Donec gravida porta turpis. Phasellus eu neque vitae sapien ullamcorper elementum. Morbi elementum sodales velit. Cras lacinia. Donec ante orci, dapibus et, suscipit sit amet, tempor nec, augue. Fusce eleifend, tortor nec scelerisque porttitor, justo arcu commodo ante, sed tincidunt quam velit et dui. Suspendisse potenti.
 
-### There is no one who loves pain itself
+### There is no one who loves pain itself1
 
 Curabitur tellus mauris, mattis quis, blandit vitae, dapibus et, purus. Nullam id risus eu urna laoreet placerat. Proin eget quam ut metus adipiscing sagittis. Quisque sed erat at nisi semper congue. Aliquam purus metus, tincidunt vel, hendrerit eget, auctor et, massa. Nullam hendrerit sapien sed mi. Nunc velit sapien, ullamcorper non, luctus sit amet, tristique quis, magna. Proin ut sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ornare tincidunt orci.
 
 <!-- END slide 1 handout area -->
-
-<endhandout />
-<endslide />
 
 <!-- END slide 1 -->
 
@@ -57,11 +52,11 @@ Curabitur tellus mauris, mattis quis, blandit vitae, dapibus et, purus. Nullam i
 - - - 
 <!-- Start slide 2 handout area -->
 
-## Neque porro 
+## Neque porro2 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id est sit amet tellus bibendum tincidunt. Phasellus tempus lectus. Maecenas rhoncus. Nullam vitae lacus. Integer fringilla tempus quam. Donec gravida porta turpis. Phasellus eu neque vitae sapien ullamcorper elementum. Morbi elementum sodales velit. Cras lacinia. Donec ante orci, dapibus et, suscipit sit amet, tempor nec, augue. Fusce eleifend, tortor nec scelerisque porttitor, justo arcu commodo ante, sed tincidunt quam velit et dui. Suspendisse potenti.
 
-### There is no one who loves pain itself
+### There is no one who loves pain itself2
 
 Curabitur tellus mauris, mattis quis, blandit vitae, dapibus et, purus. Nullam id risus eu urna laoreet placerat. Proin eget quam ut metus adipiscing sagittis. Quisque sed erat at nisi semper congue. Aliquam purus metus, tincidunt vel, hendrerit eget, auctor et, massa. Nullam hendrerit sapien sed mi. Nunc velit sapien, ullamcorper non, luctus sit amet, tristique quis, magna. Proin ut sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ornare tincidunt orci.
 
@@ -82,11 +77,11 @@ Curabitur tellus mauris, mattis quis, blandit vitae, dapibus et, purus. Nullam i
 - - -
 <!-- Start slide 3 handout area -->
 
-## Neque porro 
+## Neque porro3 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id est sit amet tellus bibendum tincidunt. Phasellus tempus lectus. Maecenas rhoncus. Nullam vitae lacus. Integer fringilla tempus quam. Donec gravida porta turpis. Phasellus eu neque vitae sapien ullamcorper elementum. Morbi elementum sodales velit. Cras lacinia. Donec ante orci, dapibus et, suscipit sit amet, tempor nec, augue. Fusce eleifend, tortor nec scelerisque porttitor, justo arcu commodo ante, sed tincidunt quam velit et dui. Suspendisse potenti.
 
-### There is no one who loves pain itself
+### There is no one who loves pain itself3
 
 Curabitur tellus mauris, mattis quis, blandit vitae, dapibus et, purus. Nullam id risus eu urna laoreet placerat. Proin eget quam ut metus adipiscing sagittis. Quisque sed erat at nisi semper congue. Aliquam purus metus, tincidunt vel, hendrerit eget, auctor et, massa. Nullam hendrerit sapien sed mi. Nunc velit sapien, ullamcorper non, luctus sit amet, tristique quis, magna. Proin ut sem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce ornare tincidunt orci.
 
