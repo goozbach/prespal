@@ -129,8 +129,8 @@
 			<div id="header"></div>
 
 			<xsl:comment> blackout and whiteout divs DO NOT EDIT </xsl:comment>
-			<div id="whiteoutbox"><xsl:comment> DO NOT EDIT </xsl:comment></xsl:comment></div>
-			<div id="blackoutbox"><xsl:comment> DO NOT EDIT </xsl:comment></xsl:comment></div>
+			<div id="whiteoutbox"><xsl:comment> DO NOT EDIT </xsl:comment></div>
+			<div id="blackoutbox"><xsl:comment> DO NOT EDIT </xsl:comment></div>
 
 			<div id="footer">
 			<h1><xsl:value-of select="/xhtml:html/xhtml:head/xhtml:title"/></h1>
