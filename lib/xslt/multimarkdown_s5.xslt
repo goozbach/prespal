@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<!-- XHTML-to-S5 converted by Fletcher Penney
+<!-- XHTML-to-S5 converted by Fletcher Penney and Jared Smith
 	specifically designed for use with MultiMarkdown created XHTML
 	
 	MultiMarkdown Version 2.0.b5
@@ -10,6 +10,7 @@
 
 <!-- 
 # Copyright (C) 2005-2008  Fletcher T. Penney <fletcher@fletcherpenney.net>
+# Copyright (C) 2009  Jared K. Smith <jared@jaredsmith.net>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
