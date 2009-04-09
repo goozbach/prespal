@@ -1,0 +1,25 @@
+Here are the steps this project uses to produce a slide show.
+
+1. Create a document with the prespal format.
+ * prespal format being based on multimarkdown.
+
+2. Run your document through a pre-processor.
+ * The pre-processor uses Text::Multimarkdown to replace contents
+   inside of the defined prespal blocks.
+ * The prespal format blocks are then converted into xhtml.
+
+3. Insert the MultiMarkdown format metadata header into the front
+   of the text stream.
+ * This metadata header is auto-generated from the presentation's
+   `meta.ini` file
+ * At this point you have a MultiMarkdown formated file with a lot
+   of embedded xhtml (from the pre-processor).
+
+4. Send this combined text stream through MultiMarkdown processor.
+ * Making sure that MathML is turned off in MMD processor.
+ * This generates a valid XHTML MultiMarkdown document.
+
+5. Send this MultiMarkdown XHTML document through an XSLT to
+   transform it into proper format for our patched S5.
+ * This document is then saved in ${project}/slides/index.html
+
