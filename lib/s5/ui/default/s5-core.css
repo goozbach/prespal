@@ -7,3 +7,25 @@ html>body div#header, html>body div#footer,
 .layout {display: block;}
 .slide, .hideme, .incremental {visibility: hidden;}
 #slide0 {visibility: visible;}
+
+#blackoutbox {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index:1001;
+}
+
+#whiteoutbox {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index:1001;
+}
