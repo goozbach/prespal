@@ -63,7 +63,7 @@ $mathParser = new Text::ASCIIMathML();
 #
 my $g_empty_element_suffix = " />";     # Change to ">" for HTML output
 my $g_tab_width = 4;
-my $g_allow_mathml = 1;
+my $g_allow_mathml = 0;
 my $g_base_header_level = 1;
 my $g_wikilinks_kill_switch = 1;		# WikiLinks may become deprecated; this is the first step
 
