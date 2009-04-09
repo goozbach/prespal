@@ -106,7 +106,9 @@
 		<meta name="controlVis" content="hidden"/>
 		<xsl:comment> style sheet links </xsl:comment>
 		<link rel="stylesheet" href="{$s5_relative_path}/slides.css" type="text/css" media="projection" id="slideProj" />
+    <!--
 		<style>@import url(<xsl:value-of select="$s5_relative_path"/>/pretty.css);</style>
+    -->
 		<link rel="stylesheet" href="{$s5_relative_path}/outline.css" type="text/css" media="screen" id="outlineStyle" />
 		<link rel="stylesheet" href="{$s5_relative_path}/print.css" type="text/css" media="print" id="slidePrint" />
 		<link rel="stylesheet" href="{$s5_relative_path}/opera.css" type="text/css" media="projection" id="operaFix" />
