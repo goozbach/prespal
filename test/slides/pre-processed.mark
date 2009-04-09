@@ -1,0 +1,89 @@
+Format: complete  
+Title: prespal testbed
+Author: Derek Carter, Jared Smith
+Address: goozbach@friocorte.com  
+
+~S
+#What is "prespal"?
+* It's a simple markdown based syntax to slideshow/handout/outline presentation mangement tool
+* Create one simple text file and it generates different output formats
+* The slideshow is done by a forked version of S5
+* Eventually we'll have output formats for pdf, and others
+
+~N
+* You can also have notes which only the presenter can see
+* Keen.
+!N
+
+~H
+There is nothing in this section of the handout
+!H
+!S
+
+~S
+# Incremental Display
+* (incremental show-first) Keep hitting/clicking "next" as long as it isn't the control link (&raquo;)
+* Bullet points are revealed one by one
+ * (incremental) All based on class name of `incremental`
+ * Lists can be classed to make items appear individually
+* Let's try it again, but without the first bullet point being pre-highlighted...
+~H
+We're still working on the syntax that this will take in the final prespal format.
+!H
+!S
+
+~S
+# S5 Themes
+* you need to wrap your images in a paragraph tag class called "imgcon".
+* Not sure how to do this yet
+
+~I
+![Default Theme][]
+![I18N Theme][]
+![Blue Theme][]
+![Flower Theme][]
+[Default Theme]: pix/S501.jpg "Default"
+[I18N Theme]: pix/S502.jpg "I18N"
+[Blue Theme]: pix/S503.jpg "Blue"
+[Flower Theme]: pix/S504.jpg "Flower"
+(one way of presenting multiple graphics)
+!I
+!S
+
+~S
+# Incremental S5 Themes
+* Images can also be incremental.
+* Not sure how to do this yet
+
+~I
+![Default Theme][](incremental)
+![I18N Theme][](incremental)
+![Blue Theme][](incremental)
+![Flower Theme][](incremental)
+(one by one!)
+!I
+!S
+
+~S
+# Incremental Animation
+* A demonstration of just one of the many ways to accomplish simple animation-like effects (using a diagram from (http://gmpg.org/xfn/and/)[XFN and...]
+* Not sure how to do this yet
+
+~I(anim)
+![mememe01][]
+![mememe02][]
+![mememe03][]
+![mememe04][]
+![mememe05][]
+[mememe01]: pix/mememe01.png "me01"
+[mememe02]: pix/mememe02.png "me02"
+[mememe03]: pix/mememe03.png "me03"
+[mememe04]: pix/mememe04.png "me04"
+[mememe05]: pix/mememe05.png "me05"
+!I
+!S
+
+~S
+# Thanks
+# A lot
+!S
