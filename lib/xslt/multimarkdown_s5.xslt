@@ -188,43 +188,46 @@
 	<xsl:template match="xhtml:div[@class='slide']">
 		<div class="slide">
 			<h1><xsl:value-of select="xhtml:h1"/></h1>	
-			<xsl:variable name="items" select="count(following-sibling::*) - count(following-sibling::xhtml:h1[1]/following-sibling::*) - count(following-sibling::xhtml:h1[1])"/>
-			<xsl:apply-templates select="following-sibling::*[position() &lt;= $items]" mode="slide"/>
+      <xsl:apply-templates select="*"/>
 		</div>		
 	</xsl:template>
 
-	<xsl:template match="xhtml:div[last()]">
-		<div class="slide">
-		<h1><xsl:value-of select="xhtml:h1"/></h1>
-		<xsl:variable name="items" select="count(following-sibling::*) - count(following-sibling::h1/following-sibling::*)"/>
-		<xsl:apply-templates select="following-sibling::*[position() &lt;= $items]" mode="slide"/>
-		</div>
+	<xsl:template match="xhtml:div[@class='handout']">
+		<div class="handout">
+      <xsl:apply-templates select="node()"/>
+		</div>		
 	</xsl:template>
 
-	<xsl:template match="xhtml:p" mode="slide">
+	<xsl:template match="xhtml:div[@class='notes']">
+		<div class="notes">
+      <xsl:apply-templates select="node()"/>
+		</div>		
+	</xsl:template>
+
+	<xsl:template match="xhtml:p">
 		<xsl:copy-of select="."/>
 	</xsl:template>
 
-	<xsl:template match="xhtml:p[1]" mode="slide">
+	<xsl:template match="xhtml:p[1]">
 		<xsl:copy-of select="."/>
 	</xsl:template>
 
-	<xsl:template match="xhtml:li" mode="slide">
+	<xsl:template match="xhtml:li">
 		<li>
-		<xsl:apply-templates select="node()" mode="slide"/>
+		<xsl:apply-templates select="node()"/>
 		</li>
 	</xsl:template>
 
-	<xsl:template match="xhtml:ol" mode="slide">
+	<xsl:template match="xhtml:ol">
 <!--		<ol class="incremental show-first"> -->
 		<ol>
-			<xsl:apply-templates select="node()" mode="slide"/>
+			<xsl:apply-templates select="node()"/>
 		</ol>
 	</xsl:template>
 
-	<xsl:template match="xhtml:ul" mode="slide">
+	<xsl:template match="xhtml:ul">
 		<ul>
-			<xsl:apply-templates select="node()" mode="slide"/>
+			<xsl:apply-templates select="node()"/>
 		</ul>
 	</xsl:template>
 </xsl:stylesheet>
