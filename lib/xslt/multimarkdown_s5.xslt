@@ -51,7 +51,7 @@
 
 	<!-- change this to reflect the relative path to your S5
 	     installation and theme, without a trailing slash -->
-	<xsl:variable name="s5_relative_path">../../lib/s5/ui/default</xsl:variable>
+	<xsl:variable name="s5_relative_path">ui/default</xsl:variable>
 
 	<xsl:param name="match"/>
 
@@ -109,6 +109,17 @@
 		<link rel="stylesheet" href="{$s5_relative_path}/outline.css" type="text/css" media="screen" id="outlineStyle" />
 		<link rel="stylesheet" href="{$s5_relative_path}/print.css" type="text/css" media="print" id="slidePrint" />
 		<link rel="stylesheet" href="{$s5_relative_path}/opera.css" type="text/css" media="projection" id="operaFix" />
+		<xsl:comment> Embedded Style</xsl:comment>
+    <style type="text/css" media="all">
+    .imgcon {width: 525px; margin: 0 auto; padding: 0; text-align: center;}
+    #anim {width: 270px; height: 320px; position: relative; margin-top:
+    0.5em;}
+    #anim img {position: absolute; top: 42px; left: 24px;}
+    img#me01 {top: 0; left: 0;}
+    img#me02 {left: 23px;}
+    img#me04 {top: 44px;}
+    img#me05 {top: 43px;left: 36px;}
+    </style>
 		<xsl:comment> S5 JS </xsl:comment>
 		<script src="{$s5_relative_path}/slides.js" type="text/javascript"></script>
 		</head>
@@ -129,8 +140,8 @@
 			<div id="header"></div>
 
 			<xsl:comment> blackout and whiteout divs DO NOT EDIT </xsl:comment>
-			<div id="whiteoutbox"><xsl:comment> DO NOT EDIT </xsl:comment></div>
-			<div id="blackoutbox"><xsl:comment> DO NOT EDIT </xsl:comment></div>
+			<div id="whiteoutbox">W</div>
+			<div id="blackoutbox">B</div>
 
 			<div id="footer">
 			<h1><xsl:value-of select="/xhtml:html/xhtml:head/xhtml:title"/></h1>
@@ -168,52 +179,55 @@
     </xsl:if>
 		</div>
 		
-		<xsl:apply-templates select="xhtml:h1"/>
+		<xsl:apply-templates select="xhtml:div[@class='slide']"/>
 		</div>
 		</body>
 	</xsl:template>
 
 
-	<xsl:template match="xhtml:h1">
+	<xsl:template match="xhtml:div[@class='slide']">
 		<div class="slide">
-			<h1><xsl:value-of select="."/></h1>	
-			<xsl:variable name="items" select="count(following-sibling::*) - count(following-sibling::xhtml:h1[1]/following-sibling::*) - count(following-sibling::xhtml:h1[1])"/>
-			<xsl:apply-templates select="following-sibling::*[position() &lt;= $items]" mode="slide"/>
+			<h1><xsl:value-of select="xhtml:h1"/></h1>	
+      <xsl:apply-templates select="*"/>
 		</div>		
 	</xsl:template>
 
-	<xsl:template match="xhtml:h1[last()]">
-		<div class="slide">
-		<h1><xsl:value-of select="."/></h1>
-		<xsl:variable name="items" select="count(following-sibling::*) - count(following-sibling::h1/following-sibling::*)"/>
-		<xsl:apply-templates select="following-sibling::*[position() &lt;= $items]" mode="slide"/>
-		</div>
+	<xsl:template match="xhtml:div[@class='handout']">
+		<div class="handout">
+      <xsl:apply-templates select="node()"/>
+		</div>		
 	</xsl:template>
 
-	<xsl:template match="xhtml:p" mode="slide">
+	<xsl:template match="xhtml:div[@class='notes']">
+		<div class="notes">
+      <xsl:apply-templates select="node()"/>
+		</div>		
+	</xsl:template>
+
+	<xsl:template match="xhtml:p">
 		<xsl:copy-of select="."/>
 	</xsl:template>
 
-	<xsl:template match="xhtml:p[1]" mode="slide">
+	<xsl:template match="xhtml:p[1]">
 		<xsl:copy-of select="."/>
 	</xsl:template>
 
-	<xsl:template match="xhtml:li" mode="slide">
+	<xsl:template match="xhtml:li">
 		<li>
-		<xsl:apply-templates select="node()" mode="slide"/>
+		<xsl:apply-templates select="node()"/>
 		</li>
 	</xsl:template>
 
-	<xsl:template match="xhtml:ol" mode="slide">
+	<xsl:template match="xhtml:ol">
 <!--		<ol class="incremental show-first"> -->
 		<ol>
-			<xsl:apply-templates select="node()" mode="slide"/>
+			<xsl:apply-templates select="node()"/>
 		</ol>
 	</xsl:template>
 
-	<xsl:template match="xhtml:ul" mode="slide">
+	<xsl:template match="xhtml:ul">
 		<ul>
-			<xsl:apply-templates select="node()" mode="slide"/>
+			<xsl:apply-templates select="node()"/>
 		</ul>
 	</xsl:template>
 </xsl:stylesheet>
