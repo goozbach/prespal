@@ -1,0 +1,22 @@
+.slide
+  # What is "prespal"?
+  * It's a simple markdown based syntax to   slideshow/handout/outline presentation mangement tool
+  * Create one simple text file and it generates different output formats
+  * The slideshow is done by a forked version of S5
+  * Eventually we'll have output formats for pdf, and others
+
+  .note
+    * You can also have notes which only the presenter can see
+    * Keen.
+
+  .handout
+    There is nothing in this section of the handout
+
+.slide
+  # this is slide two
+  ## it has two layers of `<h1>` tags
+  
+  .note
+    * keep your notes in order
+    * indentation matters
+
