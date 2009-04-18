@@ -1,0 +1,22 @@
+This is the file layout of prespal.
+
+all paths relative to top-level of prespal.
+
+bin/                                    # this directory contains the processor, and other scripts   
+docs/                                   # documentation (this file resides here as docs/layout.txt)
+lib/                                    # contains third-party code which we use to enhance our system (s5, markdown, etc)
+shared/                                 # "resources" which should be avalible to each presentation
+makefile                                # The powerhouse (create new presentation, update generated files, make AAR, etc)    
+${PRESENTATION}/                        # an entire presentaion
+               /meta.ini                # contains all the metadata for the presentation (author, relative url, modification date, etc)
+               /main.pres               # the thing you write, prespal format. This is where you spend most your time.
+               /index.html              # auto-generated, index file which is used for web view. Made from meta.ini
+               /AAR/                    # After Action Reports -- make these after each time you give a presentation
+                   /$(date --iso).pres  # individual AAR from the presentation on <DATE>
+               /slides/                 # the output directory for the slideshow
+                      /index.html       # auto-generated s5-based slideshow
+               /images/                 # slideshow images
+                      /slide1.png       # example slideshow image for slide 1
+               /resources/              # files you want to share (not directly in slideshow, eg conf files, scripts, etc)
+                         /foo.conf      # example resource
+                         /bar.pdf       # example resource
