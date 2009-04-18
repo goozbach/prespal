@@ -17,6 +17,7 @@ ${PRESENTATION}/                        # an entire presentaion
                       /index.html       # auto-generated s5-based slideshow
                /images/                 # slideshow images
                       /slide1.png       # example slideshow image for slide 1
+                      /q-code.png       # auto-generated slideshow QCODE image generates to URL of presentation
                /resources/              # files you want to share (not directly in slideshow, eg conf files, scripts, etc)
                          /foo.conf      # example resource
                          /bar.pdf       # example resource
