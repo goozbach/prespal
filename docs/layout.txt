@@ -4,8 +4,12 @@ all paths relative to top-level of prespal.
 
 bin/                                    # this directory contains the processor, and other scripts   
 docs/                                   # documentation (this file resides here as docs/layout.txt)
-lib/                                    # contains third-party code which we use to enhance our system (s5, markdown, etc)
+lib/                                    # contains third-party code which we use to enhance our system (s5, markdown, perl libs, etc)
 shared/                                 # "resources" which should be avalible to each presentation
+      /author.png                       # A picture of the ugly mug of the presentor
+      /card_q-code.png                  # auto-generated QCODE url of the h-card of the presentor
+      /card/                            # CAPTCHA protected directory containing the H-Card or V-Card of the presentor
+           /index.pl                    # CGI script which generates the captcha and displays both card types
 makefile                                # The powerhouse (create new presentation, update generated files, make AAR, etc)    
 ${PRESENTATION}/                        # an entire presentaion
                /meta.ini                # contains all the metadata for the presentation (author, relative url, modification date, etc)
