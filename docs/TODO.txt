@@ -1,0 +1,41 @@
+Things left to do.
+
+# Version 1.0
+* "outline mode" jump to current anchor
+* Jquery(ify) S5
+ * <LIST EACH FEATURE HERE>
+* create sample files
+ * XML intermediate
+ * test .pres file (with all features)
+ * shared/ files
+* create documentation
+ * meta.ini format definition
+ * AAR format definition
+ * needed perl modules
+ * needed programs
+ * proper config for /card
+ * apache config for locking down access to working dirs (bin lib ...)
+ * apache config for card CGI
+ * apache config for .pres handler?
+* create HTML "wireframe" of presenter "notes view"
+* make notes window match "wireframe"
+* create preprocessor
+* define XML DTD
+* create test framework
+* define makefile targets
+ * make pres -- create new presentation
+ * make include -- make the index include to be used elsewhere
+ * make push -- ssh or rsync method to push to your server
+ * make AAR -- should be inside a pres directory
+* create apache handler to handle .pres files?
+
+# Version 2.0
+* control flags in presenter view work
+* input framework
+* output framework
+* "flashy" effects (jquery or other)
+
+# Version 3.0
+* complete re-write
+* prespal becomes a sub-set of a full documentation framework
+
