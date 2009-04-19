@@ -25,6 +25,8 @@ div#outline {
   height: 96.5%;
   position: absolute;
   left: 41%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 div#mainleft {
@@ -56,20 +58,34 @@ div#timerwrap {
 
 div#alltime {
   width: 47%;
-  height: 80%;
+  height: 75%;
   float: left;
 }
 
 div#slidetime {
   width: 47%;
-  height: 80%;
+  height: 75%;
   float: left;
 }
 
 div#notecontainer {
-  height: 45%;
+  height: 50%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 div#controlcontainer{
-  height: auto;
+  height: 12.7%;
+}
+
+div#flagcontrol {
+  width: 25%;
+  float: left;
+}
+
+div#navigation {
+  width: 26.5%;
+  position: absolute;
+  left: 12.5%;
+  height: 10%;
 }
