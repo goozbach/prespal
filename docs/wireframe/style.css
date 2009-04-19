@@ -35,8 +35,9 @@ div#mainleft {
 }
 
 div#slidewrap {
-  height: 210px;
+  height: 22%;
 }
+
 div#currslide {
   width: 47%;
   height: 190px;
@@ -47,4 +48,28 @@ div#nextslide {
   width: 47%;
   height: 190px;
   float: right;
+}
+
+div#timerwrap {
+  height: 8%;
+}
+
+div#alltime {
+  width: 47%;
+  height: 80%;
+  float: left;
+}
+
+div#slidetime {
+  width: 47%;
+  height: 80%;
+  float: left;
+}
+
+div#notecontainer {
+  height: 45%;
+}
+
+div#controlcontainer{
+  height: auto;
 }
