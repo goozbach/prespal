@@ -48,9 +48,51 @@ sub expandPathComplex {
 =head2 expandAllSimple
 
 =cut
+my $slidelevel = '';
   
 sub expandAllSimple {
 # noop
+  my ($self) = @_;
+  my @results = ("<document>");
+  my $root_depth = $self->{tree}->getDepth() + 1;
+  my $last_depth = -1;
+  my $traversal_sub = sub {
+      my ($t) = @_;
+      my $current_depth = $t->getDepth();
+      if ($t->getNodeValue() =~ /^\.slide.*/) {
+        push @results => ("<slide>");
+        $slidelevel = 'slide';
+      } elsif ($t->getNodeValue() =~ /^\.handout.*/) {
+        push @results => ("<handout>");
+        $slidelevel = 'handout';
+      } elsif ($t->getNodeValue() =~ /^\.note.*/) {
+        push @results => ("<note>");
+        $slidelevel = 'note';
+      } else {
+        push @results => ($t->getNodeValue());
+      }
+      if ($last_depth > $current_depth) {
+      #if ($slidelevel eq "slide") {
+        #push @results => ("</slide>") if ($current_depth == 0 && $last_depth == 1);
+        push @results => ("</slide>");
+        $slidelevel = '';
+      } elsif ($slidelevel eq "note") {
+        push @results => ("</note>");
+        $slidelevel = 'slide';
+      } elsif ($slidelevel eq "handout") {
+        push @results => ("</handout>");
+        $slidelevel = 'slide';
+      }
+      #push @results => ("curr depth: $current_depth, last depth = $last_depth");
+      $last_depth = $current_depth;
+  };
+  $traversal_sub->($self->{tree}) if $self->{include_trunk};
+  $self->{tree}->traverse($traversal_sub);
+  $last_depth -= $root_depth;
+  $last_depth++ if $self->{include_trunk};
+  push @results => ("</slide>");
+  push @results => ("</document>");
+  return (join "\n" => @results);
 }
 
 =head2 expandAllComplex

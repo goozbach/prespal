@@ -2,9 +2,9 @@ Tree-Simple-View-Prespal
 
 INSTALLATION
 
-To install this module, run the following commands:
+To install this module for prespal, run the following commands:
 
-	perl Makefile.PL
+  perl Makefile.PL INSTALL_BASE=../perl/
 	make
 	make test
 	make install

@@ -4,6 +4,8 @@ use warnings;
 use Tree::Parser;
 use Data::Dumper;
 use Tree::Simple::View::HTML;
+use lib('lib/perl/lib/perl5/');
+use Tree::Simple::View::Prespal;
 
 my $testslide = <<EOD;
 .slide
@@ -43,5 +45,5 @@ EOD
 my $tp = Tree::Parser->new($testslide);
 $tp->useSpaceIndentedFilters(2); 
 my $tree = $tp->parse();
-my $tree_view = Tree::Simple::View::HTML->new($tree);
+my $tree_view = Tree::Simple::View::Prespal->new($tree);
 print $tree_view->expandAll();
