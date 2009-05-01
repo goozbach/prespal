@@ -2,6 +2,8 @@ package Tree::Simple::View::Prespal;
 
 use warnings;
 use strict;
+# inherit from this class
+our @ISA = qw(Tree::Simple::View);
 
 =head1 NAME
 
@@ -25,20 +27,34 @@ Used for parsing of prespal content
     my $foo = Tree::Simple::View::Prespal->new();
     ...
 
-=head1 FUNCTIONS
+=head1 Methods
 
-=head2 function1
+=head2 expandPathSimple
 
 =cut
-
-sub function1 {
+  
+sub expandPathSimple { ... }
 }
 
-=head2 function2
+=head2 expandPathComplex
 
 =cut
+  
+sub expandPathComplex { ... }
+}
 
-sub function2 {
+=head2 expandAllSimple
+
+=cut
+  
+sub expandAllSimple { ... }
+}
+
+=head2 expandAllComplex
+
+=cut
+  
+sub expandAllComplex { ... }
 }
 
 =head1 AUTHOR
