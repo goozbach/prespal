@@ -1,0 +1,21 @@
+Tree-Simple-View-Prespal
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Tree::Simple::View::Prespal
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2009 Derek Carter
