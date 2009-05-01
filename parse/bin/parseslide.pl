@@ -1,8 +1,9 @@
 #!/usr/bin/perl 
 use strict;
 use warnings;
-use Parse::RecDescent;
+use Tree::Parser;
 use Data::Dumper;
+use Tree::Simple::View::HTML;
 
 my $testslide = <<EOD;
 .slide
@@ -39,25 +40,8 @@ my $testslide = <<EOD;
 
 EOD
 
-
-$Parse::RecDescent::skip = '';
-my $grammar = q{
-Presentation: Slides /\Z/
-Slides: Slide(s?)
-Slide: Content Notes Handouts
-Content: Slide_Marker L1indents
-Slide_Marker: /\.slide/
-L1indents: L1indent(s?)
-L1indent: /  \w.*/
-Notes: Note(s?)
-Note: Note_Marker L2indents
-Note_Marker: /  \.note/
-L2indents: L2indent(s?)
-L2indent: /    \w.*/
-Handouts: Handout(s?)
-Handout: Handout_Marker L2indents
-Handout_Marker: /  \.handout/
-};
-
-my $parser = Parse::RecDescent->new($grammar);
-print Dumper $parser->Presentation($testslide);
+my $tp = Tree::Parser->new($testslide);
+$tp->useSpaceIndentedFilters(2); 
+my $tree = $tp->parse();
+my $tree_view = Tree::Simple::View::HTML->new($tree);
+print $tree_view->expandAll();
