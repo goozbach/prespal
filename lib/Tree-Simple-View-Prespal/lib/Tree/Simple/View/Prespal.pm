@@ -33,28 +33,32 @@ Used for parsing of prespal content
 
 =cut
   
-sub expandPathSimple { ... }
+sub expandPathSimple {
+# noop
 }
 
 =head2 expandPathComplex
 
 =cut
   
-sub expandPathComplex { ... }
+sub expandPathComplex {
+# noop
 }
 
 =head2 expandAllSimple
 
 =cut
   
-sub expandAllSimple { ... }
+sub expandAllSimple {
+# noop
 }
 
 =head2 expandAllComplex
 
 =cut
   
-sub expandAllComplex { ... }
+sub expandAllComplex {
+# noop
 }
 
 =head1 AUTHOR
