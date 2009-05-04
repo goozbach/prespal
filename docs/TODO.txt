@@ -3,7 +3,24 @@ Things left to do.
 # Version 1.0
 * "outline mode" jump to current anchor
 * Jquery(ify) S5
- * <LIST EACH FEATURE HERE>
+ * mouseover controls popup
+ * click-advance outside of controls or link
+ * document.ready -- Done
+ * <number>+<ENTER> jump to slide
+ * toggle outline view
+ * jump to slide from select
+ * whiteout -- Done
+ * blackout -- Done
+ * control forward -- Done
+ * control back -- Done
+ * control toggle -- Done
+ * control notes -- Done
+ * keypresses
+ 
+* S5 CSS
+ * hide notes from outline
+ * create print css? -- may be done with XML transform using XSL-FO
+ 
 * create sample files
  * XML intermediate
  * test .pres file (with all features)
@@ -11,16 +28,16 @@ Things left to do.
 * create documentation
  * meta.ini format definition
  * AAR format definition
- * needed perl modules
- * needed programs
+ * needed perl modules -- Mostly Done
+ * needed programs -- Started
  * proper config for /card
  * apache config for locking down access to working dirs (bin lib ...)
  * apache config for card CGI
  * apache config for .pres handler?
-* create HTML "wireframe" of presenter "notes view"
+* create HTML "wireframe" of presenter "notes view" -- Done
 * make notes window match "wireframe"
-* create preprocessor
-* define XML DTD
+* create preprocessor -- Started
+* define XML DTD -- Started
 * create test framework
 * define makefile targets
  * make pres -- create new presentation
