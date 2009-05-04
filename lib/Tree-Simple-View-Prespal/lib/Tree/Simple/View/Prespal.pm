@@ -2,6 +2,7 @@ package Tree::Simple::View::Prespal;
 
 use warnings;
 use strict;
+use Text::MultiMarkdown qw( markdown );
 # inherit from this class
 our @ISA = qw(Tree::Simple::View);
 
@@ -53,46 +54,33 @@ my $slidelevel = '';
 sub expandAllSimple {
 # noop
   my ($self) = @_;
-  my @results = ("<document>");
-  my $root_depth = $self->{tree}->getDepth() + 1;
-  my $last_depth = -1;
-  my $traversal_sub = sub {
-      my ($t) = @_;
-      my $current_depth = $t->getDepth();
-      if ($t->getNodeValue() =~ /^\.slide.*/) {
-        push @results => ("<slide>");
-        $slidelevel = 'slide';
-      } elsif ($t->getNodeValue() =~ /^\.handout.*/) {
-        push @results => ("<handout>");
-        $slidelevel = 'handout';
-      } elsif ($t->getNodeValue() =~ /^\.note.*/) {
-        push @results => ("<note>");
-        $slidelevel = 'note';
-      } else {
-        push @results => ($t->getNodeValue());
-      }
-      if ($last_depth > $current_depth) {
-      #if ($slidelevel eq "slide") {
-        #push @results => ("</slide>") if ($current_depth == 0 && $last_depth == 1);
-        push @results => ("</slide>");
-        $slidelevel = '';
-      } elsif ($slidelevel eq "note") {
-        push @results => ("</note>");
-        $slidelevel = 'slide';
-      } elsif ($slidelevel eq "handout") {
-        push @results => ("</handout>");
-        $slidelevel = 'slide';
-      }
-      #push @results => ("curr depth: $current_depth, last depth = $last_depth");
-      $last_depth = $current_depth;
-  };
-  $traversal_sub->($self->{tree}) if $self->{include_trunk};
-  $self->{tree}->traverse($traversal_sub);
-  $last_depth -= $root_depth;
-  $last_depth++ if $self->{include_trunk};
-  push @results => ("</slide>");
-  push @results => ("</document>");
-  return (join "\n" => @results);
+  my @resultset;
+  push (@resultset, "<presentation>");
+  my $returnval = $self->{tree};
+  $returnval->traverse(sub {
+    my ($_tree) = @_;
+    if ($_tree->getNodeValue() eq '.slide') { 
+      push (@resultset, ((' ' x $_tree->getDepth()), '<slide>'));
+    } elsif ($_tree->getNodeValue() eq '.note') { 
+      push (@resultset, ((' ' x $_tree->getDepth()), '<note>'));
+    } elsif ($_tree->getNodeValue() eq '.handout') { 
+      push (@resultset, ((' ' x $_tree->getDepth()), '<handout>'));
+    } else {
+      push (@resultset, markdown($_tree->getNodeValue())) unless ($_tree->getNodeValue() eq "\n");
+    }
+  },
+  sub {
+    my ($_tree) = @_;
+    if ($_tree->getNodeValue() eq '.slide') {
+      push (@resultset, ((' ' x $_tree->getDepth()), '</slide>'));
+    } elsif ($_tree->getNodeValue() eq '.note') { 
+      push (@resultset, ((' ' x $_tree->getDepth()), '</note>'));
+    } elsif ($_tree->getNodeValue() eq '.handout') { 
+      push (@resultset, ((' ' x $_tree->getDepth()), '</handout>'));
+    };
+  });
+  push (@resultset, "</presentation>");
+  return join("\n", @resultset);
 }
 
 =head2 expandAllComplex

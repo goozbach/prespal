@@ -9,7 +9,6 @@ use Tree::Simple::View::Prespal;
 
 my $testslide = <<EOD;
 .slide
-  # start slide 1
   # What is "prespal"?
   * It's a simple markdown based syntax to slideshow/handout/outline presentation mangement tool
   * Create one simple text file and it generates different output formats
@@ -21,10 +20,8 @@ my $testslide = <<EOD;
     * Keen.
   .handout
     There is nothing in this section of the handout
-  # end slide 1
 
 .slide
-  # slide 2
   # What is "prespal"?
   * It's a simple markdown based syntax to slideshow/handout/outline presentation mangement tool
   * Create one simple text file and it generates different output formats
@@ -36,9 +33,8 @@ my $testslide = <<EOD;
     .putting .slide inside
     * Keen.
   .handout
-  .putting .slide inside
+    .putting .slide inside
     There is nothing in this section of the handout
-  # end slide 2
 
 EOD
 
