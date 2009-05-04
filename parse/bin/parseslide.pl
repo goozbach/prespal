@@ -3,7 +3,6 @@ use strict;
 use warnings;
 use Tree::Parser;
 use Data::Dumper;
-use Tree::Simple::View::HTML;
 use lib('lib/perl/lib/perl5/');
 use Tree::Simple::View::Prespal;
 

@@ -5,7 +5,7 @@ use strict;
 use Text::MultiMarkdown qw( markdown );
 use XML::Smart;
 # inherit from this class
-our @ISA = qw(Tree::Simple::View);
+use base 'Tree::Simple::View';
 
 =head1 NAME
 

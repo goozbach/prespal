@@ -1,0 +1,15 @@
+# perl modules (SYSTEM)
+Text::MultiMarkdown
+XML::Smart
+GD::Barcode::QRcode
+Config::Auto
+Tree::Parser
+Tree::Simple::View
+Test::More
+
+# perl modules (included)
+Tree::Simple::View::Prespal
+
+# other commands
+xmllint
+
